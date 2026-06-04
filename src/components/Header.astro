@@ -5,7 +5,10 @@ import HeaderLink from './HeaderLink.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a href="/" class="brand">
+			<span class="brand-mark">✈</span>
+			<span class="brand-name">{SITE_TITLE}</span>
+		</a>
 		<div class="internal-links">
 			<HeaderLink href="/">ホーム</HeaderLink>
 			<HeaderLink href="/blog">記事一覧</HeaderLink>
@@ -16,31 +19,90 @@ import HeaderLink from './HeaderLink.astro';
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
+		padding: 0 1.5em;
+		background: rgba(255, 255, 255, 0.92);
+		backdrop-filter: saturate(150%) blur(8px);
+		-webkit-backdrop-filter: saturate(150%) blur(8px);
+		border-bottom: 1px solid var(--color-border);
+		position: sticky;
+		top: 0;
+		z-index: 100;
 	}
 	nav {
+		max-width: 1080px;
+		margin: 0 auto;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 0.5em;
+		min-height: 60px;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
 		text-decoration: none;
+		color: var(--color-primary);
+		font-family: var(--font-serif);
+		font-weight: 700;
+		font-size: 1.25em;
+		letter-spacing: 0.04em;
+		line-height: 1.4;
+		padding: 0.4em 0;
 	}
-	nav a.active {
+	.brand-mark {
+		color: var(--color-accent);
+		font-size: 1.1em;
+		transform: rotate(-15deg);
+		display: inline-block;
+	}
+	.brand:hover {
+		color: var(--color-accent);
+	}
+	.internal-links {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.internal-links :global(a) {
+		padding: 0.6em 0.85em;
+		color: var(--color-text-soft);
+		border-bottom: 2px solid transparent;
 		text-decoration: none;
-		border-bottom-color: var(--accent);
+		font-size: 0.95em;
+		font-weight: 500;
+		transition: color 0.15s ease, border-color 0.15s ease;
+	}
+	.internal-links :global(a:hover) {
+		color: var(--color-primary);
+	}
+	.internal-links :global(a.active) {
+		color: var(--color-primary);
+		border-bottom-color: var(--color-accent);
+		font-weight: 700;
+	}
+	@media (max-width: 720px) {
+		header {
+			padding: 0 1em;
+			position: static;
+		}
+		nav {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.1em;
+			padding: 0.3em 0;
+			min-height: 0;
+		}
+		.brand {
+			font-size: 1.15em;
+		}
+		.internal-links {
+			width: 100%;
+			gap: 0;
+		}
+		.internal-links :global(a) {
+			padding: 0.45em 0.6em 0.45em 0;
+			font-size: 0.9em;
+		}
 	}
 </style>

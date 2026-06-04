@@ -11,7 +11,7 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
-			category: z.enum(['飛行記録', '機体解説', '航空事故解説', '資格・訓練']).optional(),
+			category: z.enum(['飛行記録', '機体解説', '航空事故解説', '資格・訓練', '最近の変更点', 'ニュース', '航空業界', '基礎知識', 'そのほか']).optional(),
 		}),
 });
 

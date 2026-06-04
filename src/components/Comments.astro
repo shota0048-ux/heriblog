@@ -1,0 +1,42 @@
+---
+// Cusdis コメント欄（ログイン不要・FC2ブログ風）
+const pageId = Astro.url.pathname;
+const pageUrl = Astro.url.href;
+---
+
+<div class="comments-section">
+	<h3>コメント</h3>
+	<p class="comments-note">
+		※ 名前を入力するだけでコメントできます（メールアドレスは任意）。
+		投稿いただいたコメントは管理者の承認後に表示されます。
+	</p>
+	<div
+		id="cusdis_thread"
+		data-host="https://cusdis.com"
+		data-app-id="7af579de-c687-45e2-9a49-6b727fa29064"
+		data-page-id={pageId}
+		data-page-url={pageUrl}
+		data-page-title={Astro.props.title || ''}
+	>
+	</div>
+	<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+</div>
+
+<style>
+	.comments-section {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid #eee;
+	}
+	.comments-section h3 {
+		font-size: 1.1rem;
+		margin-bottom: 0.6rem;
+		color: #333;
+	}
+	.comments-note {
+		font-size: 0.85em;
+		color: #777;
+		margin-bottom: 1.2rem;
+		line-height: 1.6;
+	}
+</style>

@@ -3,14 +3,70 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} ヘリブログ
+	<div class="footer-inner">
+		<p class="footer-tagline">現役ヘリコプターパイロットによる航空ブログ</p>
+		<div class="footer-social">
+			<a
+				href="https://x.com/CoblogHeli87820"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="ヘリブログ公式X"
+			>
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+					<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+				</svg>
+				<span>@CoblogHeli87820</span>
+			</a>
+		</div>
+		<p class="footer-copy">&copy; {today.getFullYear()} ヘリブログ</p>
+	</div>
 </footer>
 <style>
 	footer {
-		padding: 2em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
+		margin-top: 4em;
+		padding: 2.5em 1em 2em;
+		background: var(--color-primary);
+		color: rgba(255, 255, 255, 0.85);
 		text-align: center;
-		font-size: 0.9rem;
+	}
+	.footer-inner {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.footer-tagline {
+		font-family: var(--font-serif);
+		font-size: 0.95rem;
+		margin: 0 0 0.8em;
+		color: #fff;
+		letter-spacing: 0.05em;
+	}
+	.footer-social {
+		margin: 0 0 1em;
+	}
+	.footer-social a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45em;
+		color: rgba(255, 255, 255, 0.85);
+		text-decoration: none;
+		font-size: 0.85rem;
+		padding: 0.4em 0.9em;
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		border-radius: 999px;
+		transition: background 0.15s, border-color 0.15s;
+	}
+	.footer-social a:hover {
+		background: rgba(255, 255, 255, 0.1);
+		border-color: rgba(255, 255, 255, 0.5);
+		color: #fff;
+	}
+	.footer-social svg {
+		flex-shrink: 0;
+	}
+	.footer-copy {
+		font-size: 0.85rem;
+		margin: 0;
+		color: rgba(255, 255, 255, 0.65);
+		letter-spacing: 0.04em;
 	}
 </style>
