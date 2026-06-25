@@ -1,17 +1,57 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import PostGrid from '../components/PostGrid.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
-const posts = (await getCollection('blog')).sort(
+const allPosts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-).slice(0, 6);
+);
+const byId = new Map(allPosts.map((p) => [p.id, p]));
+const pick = (ids) => ids.map((id) => byId.get(id)).filter(Boolean);
 
-const categories = ['飛行記録', '機体解説', '航空事故解説', '資格・訓練', '最近の変更点', 'ニュース', '航空業界', '基礎知識', 'そのほか'];
+// 注目記事（ピックアップ）— 編集可。存在しないIDは自動で除外されます
+const featured = pick([
+	'helicopter-firefighting-2026',
+	'ah23-vs-r22-2026',
+	'voices-voluntary-safety-report-2026',
+]);
+
+// 連載・シリーズ — 関連する記事をまとめて入口に
+const series = [
+	{
+		title: '阿蘇・火口のヘリ回収',
+		ids: ['aso-heli-salvage-2026', 'aso-heli-salvage-deadlock-2026', 'aso-heli-police-recovery-2026'],
+	},
+	{
+		title: 'ロビンソンの安全情報（SN）',
+		ids: ['robinson-publications-guide-2026', 'robinson-sn40-postcrash-fire-2026', 'robinson-sn32-turbulence-2026'],
+	},
+	{
+		title: '滑走路の安全とリモート対空援助',
+		ids: ['remote-flight-service-airport-2026', 'wakkanai-runway-incursion-2026', 'haneda-runway-joint-heli-rollover-2026', 'haneda-runway-joint-committee-2026'],
+	},
+	{
+		title: 'ヘリ操縦士・人材の課題',
+		ids: ['fire-disaster-heli-operation-2026', 'heli-pilot-training-course-pipeline-2026', 'heli-pilot-experience-accumulation-2026', 'doctor-heli-suspension-mechanic-2026'],
+	},
+]
+	.map((s) => ({ title: s.title, posts: pick(s.ids) }))
+	.filter((s) => s.posts.length > 0);
+
+const latest = allPosts.slice(0, 6);
+
+// カテゴリ（件数つき・記事の多い順）
+const counts = {};
+for (const p of allPosts) {
+	const c = p.data.category;
+	if (c) counts[c] = (counts[c] || 0) + 1;
+}
+const categories = Object.entries(counts)
+	.sort((a, b) => b[1] - a[1])
+	.map(([name, count]) => ({ name, count }));
 ---
 
 <!doctype html>
@@ -59,13 +99,43 @@ const categories = ['飛行記録', '機体解説', '航空事故解説', '資�
 				font-size: 1.05rem;
 				line-height: 1.9;
 				max-width: 540px;
-				margin: 0 auto;
+				margin: 0 auto 1.5em;
+			}
+			.hero-actions {
+				display: flex;
+				gap: 0.7rem;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+			.hero-btn {
+				display: inline-block;
+				padding: 0.6em 1.4em;
+				border-radius: 999px;
+				text-decoration: none;
+				font-size: 0.92rem;
+				font-weight: 600;
+				transition: transform 0.15s ease, background 0.15s ease;
+			}
+			.hero-btn.primary {
+				background: var(--color-accent);
+				color: #fff;
+			}
+			.hero-btn.ghost {
+				background: rgba(255, 255, 255, 0.12);
+				color: #fff;
+				border: 1px solid rgba(255, 255, 255, 0.35);
+			}
+			.hero-btn:hover {
+				transform: translateY(-2px);
 			}
 
 			main {
 				max-width: 1080px;
 				margin: 0 auto;
 				padding: 3rem 1.5rem 2rem;
+			}
+			.block {
+				margin-bottom: 3.5rem;
 			}
 			.section-title {
 				font-family: var(--font-serif);
@@ -85,13 +155,14 @@ const categories = ['飛行記録', '機体解説', '航空事故解説', '資�
 			.section-sub {
 				color: var(--color-text-muted);
 				font-size: 0.9rem;
-				margin: 0 0 2rem;
+				margin: 0 0 1.6rem;
 			}
+
+			/* カテゴリ（件数つき） */
 			.categories {
 				display: flex;
 				gap: 0.5rem;
 				flex-wrap: wrap;
-				margin-bottom: 3rem;
 			}
 			.category-tag {
 				background: var(--color-surface);
@@ -108,106 +179,76 @@ const categories = ['飛行記録', '機体解説', '航空事故解説', '資�
 				border-color: var(--color-accent);
 				color: var(--color-accent);
 			}
-
-			.post-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-				gap: 1.8rem;
-				list-style: none;
-				padding: 0;
-				margin: 0;
+			.cat-count {
+				color: var(--color-text-muted);
+				font-size: 0.78em;
+				margin-left: 0.35em;
 			}
-			.post-card {
+
+			/* 連載・シリーズ */
+			.series-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+				gap: 1.4rem;
+			}
+			.series-card {
 				background: var(--color-surface);
 				border: 1px solid var(--color-border);
 				border-radius: 12px;
-				overflow: hidden;
-				transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+				padding: 1.3rem 1.4rem 1.4rem;
+				border-top: 3px solid var(--color-accent);
 			}
-			.post-card a {
-				display: block;
-				text-decoration: none;
-				color: inherit;
-				height: 100%;
-			}
-			.post-card:hover {
-				transform: translateY(-3px);
-				box-shadow: var(--shadow-lg);
-				border-color: var(--color-accent-soft);
-			}
-			.post-card.no-image {
-				background: linear-gradient(135deg, #ffffff 0%, var(--color-bg-soft) 100%);
-				border-left: 4px solid var(--color-accent);
-			}
-			.post-card.no-image .card-body {
-				padding: 1.4rem 1.4rem 1.5rem;
-			}
-			.card-image-wrap {
-				aspect-ratio: 16 / 9;
-				overflow: hidden;
-				background: var(--color-bg-soft);
-			}
-			.card-image-wrap :global(img) {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				border-radius: 0;
-				display: block;
-				transition: transform 0.4s ease;
-			}
-			.post-card:hover .card-image-wrap :global(img) {
-				transform: scale(1.05);
-			}
-			.card-image-placeholder {
-				width: 100%;
-				height: 100%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-				color: var(--color-accent-soft);
-				font-size: 3rem;
-			}
-			.card-body {
-				padding: 1.2rem 1.4rem 1.5rem;
-			}
-			.card-meta {
-				display: flex;
-				align-items: center;
-				gap: 0.6rem;
-				font-size: 0.78rem;
-				color: var(--color-text-muted);
-				margin-bottom: 0.6rem;
-			}
-			.card-category {
-				color: var(--color-accent);
-				font-weight: 600;
-				background: rgba(182, 90, 59, 0.08);
-				padding: 0.15rem 0.55rem;
-				border-radius: 4px;
-			}
-			.card-title {
+			.series-title {
 				font-family: var(--font-serif);
-				font-size: 1.05rem;
-				font-weight: 700;
+				font-size: 1.08rem;
 				color: var(--color-primary);
-				margin: 0 0 0.6rem;
-				line-height: 1.5;
+				margin: 0 0 0.8rem;
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				gap: 0.5em;
 			}
-			.card-desc {
-				font-size: 0.88rem;
-				color: var(--color-text-soft);
-				line-height: 1.7;
+			.series-count {
+				font-size: 0.72rem;
+				font-weight: 600;
+				color: var(--color-accent);
+				background: rgba(182, 90, 59, 0.08);
+				padding: 0.15rem 0.5rem;
+				border-radius: 999px;
+				white-space: nowrap;
+			}
+			.series-list {
+				list-style: none;
 				margin: 0;
-				display: -webkit-box;
-				-webkit-line-clamp: 3;
-				-webkit-box-orient: vertical;
-				overflow: hidden;
+				padding: 0;
+			}
+			.series-list li {
+				border-top: 1px dashed var(--color-border);
+			}
+			.series-list li:first-child {
+				border-top: none;
+			}
+			.series-list a {
+				display: block;
+				padding: 0.55rem 0;
+				font-size: 0.9rem;
+				line-height: 1.5;
+				color: var(--color-text-soft);
+				text-decoration: none;
+				transition: color 0.15s;
+			}
+			.series-list a::before {
+				content: "›";
+				color: var(--color-accent);
+				margin-right: 0.5em;
+			}
+			.series-list a:hover {
+				color: var(--color-accent);
 			}
 
 			.see-all {
 				text-align: center;
-				margin: 2.5rem 0 1rem;
+				margin: 1rem 0;
 			}
 			.see-all-link {
 				display: inline-block;
@@ -236,31 +277,17 @@ const categories = ['飛行記録', '機体解説', '航空事故解説', '資�
 					font-size: 0.9rem;
 					line-height: 1.7;
 				}
-				.hero-stat-value {
-					font-size: 18px;
-				}
 				main {
 					padding: 1.8rem 1rem 1rem;
 				}
-				.post-grid {
-					grid-template-columns: 1fr;
-					gap: 1rem;
-				}
-				.card-image-wrap {
-					aspect-ratio: 21 / 9;
-				}
-				.card-body {
-					padding: 0.9rem 1.1rem 1.1rem;
-				}
-				.card-title {
-					font-size: 0.98rem;
-				}
-				.card-desc {
-					font-size: 0.83rem;
-					-webkit-line-clamp: 2;
+				.block {
+					margin-bottom: 2.5rem;
 				}
 				.section-title {
 					font-size: 1.2rem;
+				}
+				.series-grid {
+					grid-template-columns: 1fr;
 				}
 			}
 		</style>
@@ -271,40 +298,60 @@ const categories = ['飛行記録', '機体解説', '航空事故解説', '資�
 			<div class="hero-inner">
 				<h1><span class="hero-mark">✈</span>ヘリブログ</h1>
 				<p>現役ヘリコプターパイロットが書く航空ブログ。<br />飛行の現場から、機体のこと、事故の教訓、訓練のことまで。</p>
+				<div class="hero-actions">
+					<a href="/blog" class="hero-btn primary">記事を読む</a>
+					<a href="/search" class="hero-btn ghost">🔍 検索</a>
+				</div>
 			</div>
 		</section>
 		<main>
-			<h2 class="section-title">カテゴリ</h2>
-			<p class="section-sub">関心のあるテーマからどうぞ</p>
-			<div class="categories">
-				{categories.map(cat => (
-					<a href={`/blog/category/${cat}/`} class="category-tag">{cat}</a>
-				))}
-			</div>
+			{featured.length > 0 && (
+				<section class="block">
+					<h2 class="section-title">ピックアップ</h2>
+					<p class="section-sub">まず読んでほしい記事</p>
+					<PostGrid posts={featured} />
+				</section>
+			)}
 
-			<h2 class="section-title">最新の記事</h2>
-			<p class="section-sub">直近の更新</p>
-			<ul class="post-grid">
-				{posts.map(post => (
-					<li class={`post-card${post.data.heroImage ? '' : ' no-image'}`}>
-						<a href={`/blog/${post.id}/`}>
-							{post.data.heroImage && (
-								<div class="card-image-wrap">
-									<Image src={post.data.heroImage} alt="" width={600} height={338} />
-								</div>
-							)}
-							<div class="card-body">
-								<div class="card-meta">
-									<FormattedDate date={post.data.pubDate} />
-									{post.data.category && <span class="card-category">{post.data.category}</span>}
-								</div>
-								<p class="card-title">{post.data.title}</p>
-								<p class="card-desc">{post.data.description}</p>
+			{series.length > 0 && (
+				<section class="block">
+					<h2 class="section-title">連載・シリーズ</h2>
+					<p class="section-sub">続報や関連テーマをまとめて</p>
+					<div class="series-grid">
+						{series.map((s) => (
+							<div class="series-card">
+								<h3 class="series-title">
+									{s.title}
+									<span class="series-count">{s.posts.length}記事</span>
+								</h3>
+								<ul class="series-list">
+									{s.posts.map((p) => (
+										<li><a href={`/blog/${p.id}/`}>{p.data.title}</a></li>
+									))}
+								</ul>
 							</div>
+						))}
+					</div>
+				</section>
+			)}
+
+			<section class="block">
+				<h2 class="section-title">カテゴリ</h2>
+				<p class="section-sub">関心のあるテーマからどうぞ</p>
+				<div class="categories">
+					{categories.map((cat) => (
+						<a href={`/blog/category/${cat.name}/`} class="category-tag">
+							{cat.name}<span class="cat-count">{cat.count}</span>
 						</a>
-					</li>
-				))}
-			</ul>
+					))}
+				</div>
+			</section>
+
+			<section class="block">
+				<h2 class="section-title">最新の記事</h2>
+				<p class="section-sub">直近の更新</p>
+				<PostGrid posts={latest} />
+			</section>
 
 			<div class="see-all">
 				<a href="/blog" class="see-all-link">すべての記事を見る →</a>
