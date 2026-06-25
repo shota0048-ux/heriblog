@@ -128,10 +128,10 @@ const { title, description, pubDate, updatedDate, heroImage, category, headings 
 	<body>
 		<Header />
 		<main class="full-main">
-			<article>
+			<article data-pagefind-body>
 				{heroImage && (
 					<div class="hero-banner">
-						<Image width={1280} height={640} src={heroImage} alt="" />
+						<Image width={1280} height={640} src={heroImage} alt="" data-pagefind-meta="image[src]" />
 					</div>
 				)}
 				<div class="article-wrap">
@@ -142,7 +142,7 @@ const { title, description, pubDate, updatedDate, heroImage, category, headings 
 								<a href={`/blog/category/${category}/`} class="article-category">{category}</a>
 							)}
 						</div>
-						<h1 class="article-title">{title}</h1>
+						<h1 class="article-title" data-pagefind-meta="title">{title}</h1>
 						{updatedDate && (
 							<div class="last-updated-on">
 								Last updated on <FormattedDate date={updatedDate} />

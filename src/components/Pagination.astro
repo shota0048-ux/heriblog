@@ -1,0 +1,88 @@
+---
+const { currentPage, totalPages } = Astro.props;
+const pageUrl = (p) => (p === 1 ? '/blog' : `/blog/page/${p}`);
+const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+---
+
+{totalPages > 1 && (
+	<nav class="pagination" aria-label="ページ送り">
+		{currentPage > 1 ? (
+			<a href={pageUrl(currentPage - 1)} class="page-nav">← 前へ</a>
+		) : (
+			<span class="page-nav disabled">← 前へ</span>
+		)}
+		<div class="page-nums">
+			{pages.map((p) =>
+				p === currentPage ? (
+					<span class="page-num current" aria-current="page">{p}</span>
+				) : (
+					<a href={pageUrl(p)} class="page-num">{p}</a>
+				)
+			)}
+		</div>
+		{currentPage < totalPages ? (
+			<a href={pageUrl(currentPage + 1)} class="page-nav">次へ →</a>
+		) : (
+			<span class="page-nav disabled">次へ →</span>
+		)}
+	</nav>
+)}
+
+<style>
+	.pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: 3rem;
+	}
+	.page-nums {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+	}
+	.page-num,
+	.page-nav {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 2.2rem;
+		height: 2.2rem;
+		padding: 0 0.6rem;
+		border: 1px solid var(--color-border);
+		border-radius: 8px;
+		text-decoration: none;
+		color: var(--color-text-soft);
+		font-size: 0.9rem;
+		background: var(--color-surface);
+		transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+	}
+	.page-num:hover,
+	.page-nav:not(.disabled):hover {
+		border-color: var(--color-accent-soft);
+		color: var(--color-primary);
+	}
+	.page-num.current {
+		background: var(--color-accent);
+		border-color: var(--color-accent);
+		color: #fff;
+		font-weight: 700;
+	}
+	.page-nav.disabled {
+		opacity: 0.4;
+		cursor: default;
+	}
+	@media (max-width: 720px) {
+		.pagination {
+			margin-top: 2rem;
+		}
+		.page-num,
+		.page-nav {
+			min-width: 2rem;
+			height: 2rem;
+			font-size: 0.85rem;
+			padding: 0 0.5rem;
+		}
+	}
+</style>

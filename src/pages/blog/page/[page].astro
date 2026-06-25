@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import Footer from '../../../components/Footer.astro';
+import Header from '../../../components/Header.astro';
+import PostGrid from '../../../components/PostGrid.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+
+export async function getStaticPaths() {
+	const PAGE_SIZE = 12;
+	const allPosts = (await getCollection('blog')).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	);
+	const totalPages = Math.ceil(allPosts.length / PAGE_SIZE);
+	const paths = [];
+	// 1ページ目は /blog（index.astro）が担当。ここは2ページ目以降。
+	for (let p = 2; p <= totalPages; p++) {
+		paths.push({
+			params: { page: String(p) },
+			props: {
+				posts: allPosts.slice((p - 1) * PAGE_SIZE, p * PAGE_SIZE),
+				currentPage: p,
+				totalPages,
+				totalCount: allPosts.length,
+			},
+		});
+	}
+	return paths;
+}
+
+const { posts, currentPage, totalPages, totalCount } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<BaseHead
+			title={`記事一覧（${currentPage}/${totalPages}）| ${SITE_TITLE}`}
+			description={SITE_DESCRIPTION}
+		/>
+		<style>
+			main {
+				max-width: 1080px;
+				margin: 0 auto;
+				padding: 3rem 1.5rem;
+			}
+			.page-title {
+				font-family: var(--font-serif);
+				font-size: 2rem;
+				margin: 0 0 0.3em;
+				color: var(--color-primary);
+				text-align: center;
+			}
+			.page-sub {
+				color: var(--color-text-muted);
+				text-align: center;
+				margin-bottom: 2.5rem;
+				font-size: 0.95rem;
+			}
+			.search-link {
+				display: block;
+				text-align: center;
+				margin-bottom: 2rem;
+			}
+			.search-link a {
+				color: var(--color-accent);
+				text-decoration: none;
+				font-size: 0.9rem;
+				border: 1px solid var(--color-accent-soft);
+				border-radius: 999px;
+				padding: 0.4rem 1.1rem;
+			}
+			.search-link a:hover {
+				background: rgba(182, 90, 59, 0.08);
+			}
+			@media (max-width: 720px) {
+				main {
+					padding: 1.8rem 1rem;
+				}
+				.page-title {
+					font-size: 1.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1 class="page-title">記事一覧</h1>
+			<p class="page-sub">{totalCount} 件の記事（{currentPage} / {totalPages} ページ）</p>
+			<p class="search-link"><a href="/search">🔍 記事を検索する</a></p>
+			<PostGrid posts={posts} />
+			<Pagination currentPage={currentPage} totalPages={totalPages} />
+		</main>
+		<Footer />
+	</body>
+</html>
