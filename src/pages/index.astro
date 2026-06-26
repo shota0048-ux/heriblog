@@ -305,6 +305,12 @@ const categories = Object.entries(counts)
 			</div>
 		</section>
 		<main>
+			<section class="block">
+				<h2 class="section-title">最新の記事</h2>
+				<p class="section-sub">直近の更新</p>
+				<PostGrid posts={latest} />
+			</section>
+
 			{featured.length > 0 && (
 				<section class="block">
 					<h2 class="section-title">ピックアップ</h2>
@@ -345,12 +351,6 @@ const categories = Object.entries(counts)
 						</a>
 					))}
 				</div>
-			</section>
-
-			<section class="block">
-				<h2 class="section-title">最新の記事</h2>
-				<p class="section-sub">直近の更新</p>
-				<PostGrid posts={latest} />
 			</section>
 
 			<div class="see-all">
