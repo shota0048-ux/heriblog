@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import Footer from '../../../components/Footer.astro';
+import Header from '../../../components/Header.astro';
+import PostGrid from '../../../components/PostGrid.astro';
+import { SITE_TITLE } from '../../../consts';
+import { SERIES } from '../../../data/series';
+
+export async function getStaticPaths() {
+	return SERIES.map((s) => ({ params: { slug: s.slug }, props: { series: s } }));
+}
+
+const { series } = Astro.props;
+
+const allPosts = await getCollection('blog');
+const byId = new Map(allPosts.map((p) => [p.id, p]));
+const posts = series.ids.map((id) => byId.get(id)).filter(Boolean);
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<BaseHead title={`特集：${series.title} | ${SITE_TITLE}`} description={series.description} />
+		<style>
+			main {
+				max-width: 1080px;
+				margin: 0 auto;
+				padding: 3rem 1.5rem;
+			}
+			.page-eyebrow {
+				text-align: center;
+				color: var(--color-accent);
+				font-size: 0.85rem;
+				font-weight: 600;
+				letter-spacing: 0.1em;
+				margin: 0 0 0.4em;
+			}
+			.page-title {
+				font-family: var(--font-serif);
+				font-size: 2rem;
+				margin: 0 0 0.6em;
+				color: var(--color-primary);
+				text-align: center;
+			}
+			.page-desc {
+				color: var(--color-text-soft);
+				max-width: 640px;
+				margin: 0 auto 2.5rem;
+				font-size: 0.95rem;
+				line-height: 1.9;
+			}
+			.series-note {
+				text-align: center;
+				color: var(--color-text-muted);
+				font-size: 0.85rem;
+				margin-bottom: 1.5rem;
+			}
+			.back-links {
+				display: flex;
+				justify-content: center;
+				gap: 1.5rem;
+				margin-top: 2.5rem;
+			}
+			.back-links a {
+				color: var(--color-accent);
+				text-decoration: none;
+				font-size: 0.9rem;
+			}
+			.back-links a:hover {
+				text-decoration: underline;
+			}
+			@media (max-width: 720px) {
+				main {
+					padding: 1.8rem 1rem;
+				}
+				.page-title {
+					font-size: 1.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p class="page-eyebrow">特集・シリーズ</p>
+			<h1 class="page-title">{series.title}</h1>
+			<p class="page-desc">{series.description}</p>
+			<p class="series-note">全{posts.length}記事・古い順（読み進める順）</p>
+			<PostGrid posts={posts} />
+			<div class="back-links">
+				<a href="/blog/series/">← 特集一覧</a>
+				<a href="/blog">すべての記事 →</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

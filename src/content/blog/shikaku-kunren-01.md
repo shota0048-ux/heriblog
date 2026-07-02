@@ -3,6 +3,7 @@ title: '事業用ヘリコプター操縦士——資格取得までの道のり
 description: '日本でヘリコプターパイロットになるための資格制度と、実際の訓練の流れを現役パイロットが解説します。'
 pubDate: '2026-03-28'
 category: '資格・訓練'
+heroImage: '../../assets/posts/shikaku-kunren-01-hero.jpg'
 ---
 
 「ヘリのパイロットになるにはどうすればいいですか？」
@@ -34,3 +35,7 @@ category: '資格・訓練'
 - [ヘリコプターパイロットになるには「いくら・何年」かかるのか？](/blog/helicopter-pilot-cost-time-2026/)
 - [現役パイロットが教える、国内ヘリコプター訓練のリアル](/blog/helicopter-training-japan-2026/)
 - [着氷（アイシング）の基礎——学生のうちに押さえておきたい仕組みと対処](/blog/icing-basics-2026/)
+
+---
+
+**画像出典**：Wikimedia Commons "G-DCBI Schweizer 300 Helicopter (25584044784)" by James from Cheltenham, Gloucestershire（CC BY-SA 2.0）

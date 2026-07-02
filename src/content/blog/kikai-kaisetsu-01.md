@@ -3,6 +3,7 @@ title: 'テールローターの役割——なぜヘリはまっすぐ飛べる
 description: 'ヘリコプターの基本構造であるテールローターの仕組みと、それが失われたときに何が起きるかを解説します。'
 pubDate: '2026-04-10'
 category: '機体解説'
+heroImage: '../../assets/posts/kikai-kaisetsu-01-hero.jpg'
 ---
 
 「ヘリコプターはなぜ回転しないの？」——これはよく聞かれる質問だ。
@@ -32,3 +33,7 @@ category: '機体解説'
 - [オーバートルクはうっかりじゃない——吊り荷作業で構造的に起きる理由](/blog/overtorque-2026/)
 - [現役パイロットが教える、国内ヘリコプター訓練のリアル](/blog/helicopter-training-japan-2026/)
 - [ヘリコプターによる山林火災消火——海外研究から見える効率的な使い方](/blog/helicopter-firefighting-2026/)
+
+---
+
+**画像出典**：Wikimedia Commons "NHIndustries NH90 TTH French Army Air Corps EAD PAS 2013 04 tail rotor detail" by Julian Herzog (Website)（CC BY 4.0）

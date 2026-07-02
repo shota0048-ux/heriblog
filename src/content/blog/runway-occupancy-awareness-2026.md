@@ -3,6 +3,7 @@ title: '滑走路占有監視支援機能に「警報」が追加【令和8年3�
 description: '令和8年3月19日、滑走路占有監視支援機能（管制官への注意喚起システム）に「警報音」と「警報表示」が追加されました。令和6年1月の羽田空港事故を契機に、注意喚起音→警報音と段階的に強化されてきた経緯と、システムの仕組みを整理しました。'
 pubDate: '2026-05-05'
 category: '最近の変更点'
+heroImage: '../../assets/posts/runway-occupancy-awareness-2026-hero.jpg'
 ---
 
 令和8年3月19日、国土交通省航空局は **「滑走路占有監視支援機能」（管制官に対する注意喚起システム）** に**警報音・警報表示を追加する**改正を施行しました。これは、令和6年1月の羽田空港滑走路衝突事故を契機に進められてきた対策強化の最新ステップです。
@@ -223,3 +224,7 @@ category: '最近の変更点'
 
 - [焼津ヘリ無許可離着陸事件と「不起訴」が意味するもの](/blog/yaizu-heli-unauthorized-landing-2026/)
 - [災害時の救援航空機——「電話で許可申請」「包括的許可」が認められる仕組み](/blog/disaster-relief-aviation-procedures-2026/)
+
+---
+
+**画像出典**：Wikimedia Commons "Haneda Airport control tower (16262012210)" by Takayuki Suzuki from Kanagawa, Japan（CC BY-SA 2.0）

@@ -1,0 +1,123 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import Footer from '../../../components/Footer.astro';
+import Header from '../../../components/Header.astro';
+import { SITE_TITLE } from '../../../consts';
+import { SERIES } from '../../../data/series';
+
+const allPosts = await getCollection('blog');
+const byId = new Map(allPosts.map((p) => [p.id, p]));
+const seriesList = SERIES.map((s) => ({
+	...s,
+	posts: s.ids.map((id) => byId.get(id)).filter(Boolean),
+})).filter((s) => s.posts.length > 0);
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<BaseHead
+			title={`特集・シリーズ一覧 | ${SITE_TITLE}`}
+			description="続報や関連テーマをまとめた特集ページの一覧。ドクターヘリの担い手問題、滑走路の安全、ロビンソンの安全情報など、テーマごとに読み進められます。"
+		/>
+		<style>
+			main {
+				max-width: 1080px;
+				margin: 0 auto;
+				padding: 3rem 1.5rem;
+			}
+			.page-title {
+				font-family: var(--font-serif);
+				font-size: 2rem;
+				margin: 0 0 0.3em;
+				color: var(--color-primary);
+				text-align: center;
+			}
+			.page-sub {
+				color: var(--color-text-muted);
+				text-align: center;
+				margin-bottom: 2.5rem;
+				font-size: 0.95rem;
+			}
+			.series-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+				gap: 1.8rem;
+			}
+			.series-card {
+				background: var(--color-surface);
+				border: 1px solid var(--color-border);
+				border-radius: 12px;
+				padding: 1.4rem 1.5rem 1.5rem;
+				transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+			}
+			.series-card:hover {
+				transform: translateY(-3px);
+				box-shadow: var(--shadow-lg);
+				border-color: var(--color-accent-soft);
+			}
+			.series-card a {
+				text-decoration: none;
+				color: inherit;
+				display: block;
+			}
+			.series-title {
+				font-family: var(--font-serif);
+				font-size: 1.1rem;
+				font-weight: 700;
+				color: var(--color-primary);
+				margin: 0 0 0.5rem;
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				gap: 0.6rem;
+			}
+			.series-count {
+				font-size: 0.78rem;
+				font-weight: 600;
+				color: var(--color-accent);
+				white-space: nowrap;
+			}
+			.series-desc {
+				font-size: 0.88rem;
+				color: var(--color-text-soft);
+				line-height: 1.8;
+				margin: 0;
+			}
+			@media (max-width: 720px) {
+				main {
+					padding: 1.8rem 1rem;
+				}
+				.page-title {
+					font-size: 1.5rem;
+				}
+				.series-grid {
+					grid-template-columns: 1fr;
+					gap: 1rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1 class="page-title">特集・シリーズ</h1>
+			<p class="page-sub">続報や関連テーマをまとめて読む</p>
+			<div class="series-grid">
+				{seriesList.map((s) => (
+					<div class="series-card">
+						<a href={`/blog/series/${s.slug}/`}>
+							<h2 class="series-title">
+								{s.title}
+								<span class="series-count">{s.posts.length}記事</span>
+							</h2>
+							<p class="series-desc">{s.description}</p>
+						</a>
+					</div>
+				))}
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import PostGrid from '../components/PostGrid.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SERIES } from '../data/series';
 
 const allPosts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -19,27 +20,10 @@ const featured = pick([
 	'voices-voluntary-safety-report-2026',
 ]);
 
-// 連載・シリーズ — 関連する記事をまとめて入口に
-const series = [
-	{
-		title: '阿蘇・火口のヘリ回収',
-		ids: ['aso-heli-salvage-2026', 'aso-heli-salvage-deadlock-2026', 'aso-heli-police-recovery-2026'],
-	},
-	{
-		title: 'ロビンソンの安全情報（SN）',
-		ids: ['robinson-publications-guide-2026', 'robinson-sn40-postcrash-fire-2026', 'robinson-sn32-turbulence-2026'],
-	},
-	{
-		title: '滑走路の安全とリモート対空援助',
-		ids: ['remote-flight-service-airport-2026', 'wakkanai-runway-incursion-2026', 'haneda-runway-joint-heli-rollover-2026', 'haneda-runway-joint-committee-2026'],
-	},
-	{
-		title: 'ヘリ操縦士・人材の課題',
-		ids: ['fire-disaster-heli-operation-2026', 'heli-pilot-training-course-pipeline-2026', 'heli-pilot-experience-accumulation-2026', 'doctor-heli-suspension-mechanic-2026'],
-	},
-]
-	.map((s) => ({ title: s.title, posts: pick(s.ids) }))
-	.filter((s) => s.posts.length > 0);
+// 連載・シリーズ — 定義は src/data/series.ts（特集ハブ /blog/series/ と共用）
+const series = SERIES.map((s) => ({ slug: s.slug, title: s.title, posts: pick(s.ids) })).filter(
+	(s) => s.posts.length > 0,
+);
 
 const latest = allPosts.slice(0, 6);
 
@@ -208,6 +192,25 @@ const categories = Object.entries(counts)
 				justify-content: space-between;
 				gap: 0.5em;
 			}
+			.series-title a {
+				color: inherit;
+				text-decoration: none;
+			}
+			.series-title a:hover {
+				color: var(--color-accent);
+			}
+			.series-see-all {
+				text-align: center;
+				margin-top: 1.6rem;
+			}
+			.series-see-all a {
+				color: var(--color-accent);
+				text-decoration: none;
+				font-size: 0.9rem;
+			}
+			.series-see-all a:hover {
+				text-decoration: underline;
+			}
 			.series-count {
 				font-size: 0.72rem;
 				font-weight: 600;
@@ -327,7 +330,7 @@ const categories = Object.entries(counts)
 						{series.map((s) => (
 							<div class="series-card">
 								<h3 class="series-title">
-									{s.title}
+									<a href={`/blog/series/${s.slug}/`}>{s.title}</a>
 									<span class="series-count">{s.posts.length}記事</span>
 								</h3>
 								<ul class="series-list">
@@ -338,6 +341,7 @@ const categories = Object.entries(counts)
 							</div>
 						))}
 					</div>
+					<p class="series-see-all"><a href="/blog/series/">すべての特集を見る →</a></p>
 				</section>
 			)}
 

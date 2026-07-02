@@ -3,6 +3,7 @@ title: '「もう少しだけ」が命取り——霧の中のヘリコプター
 description: '霧や雲中飛行で起こる空間識失調（バーティゴ）と「Get-home-itis（早く帰りたい病）」。2018年8月の群馬県防災ヘリ墜落事故を振り返りながら、ヘリパイロットが霧と向き合うための4つの教訓を整理します。'
 pubDate: '2026-04-15'
 category: '飛行記録'
+heroImage: '../../assets/posts/hikou-kiroku-01-hero.jpg'
 ---
 
 ## 真っ白な世界に飲み込まれるとき
@@ -112,3 +113,7 @@ ATTモードへの切り替え、計器のみでの水平回復、180度ター�
 - [ヴァーティゴ——空間識失調はなぜ起きるのか](/blog/jiko-kaisetsu-01/)
 - [着氷（アイシング）の基礎——学生のうちに押さえておきたい仕組みと対処](/blog/icing-basics-2026/)
 - [現役パイロットが教える、国内ヘリコプター訓練のリアル](/blog/helicopter-training-japan-2026/)
+
+---
+
+**画像出典**：Wikimedia Commons "Mount Taranaki aerial view fog" by Phillip Capper from Wellington, New Zealand（CC BY 2.0）。※ニュージーランド・タラナキ山周辺のイメージ画像です

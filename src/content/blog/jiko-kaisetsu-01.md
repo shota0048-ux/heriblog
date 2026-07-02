@@ -3,6 +3,7 @@ title: 'ヴァーティゴ——空間識失調はなぜ起きるのか'
 description: '多くの航空事故に関係する空間識失調（ヴァーティゴ）のメカニズムと、パイロットが取るべき対処法を解説します。'
 pubDate: '2026-04-05'
 category: '航空事故解説'
+heroImage: '../../assets/posts/jiko-kaisetsu-01-hero.jpg'
 ---
 
 航空事故の原因として繰り返し登場する言葉がある——「空間識失調（Spatial Disorientation）」、通称ヴァーティゴだ。
@@ -30,3 +31,9 @@ category: '航空事故解説'
 - [もう少しだけが命取り——霧の中のヘリコプター飛行が教えてくれること](/blog/hikou-kiroku-01/)
 - [着氷（アイシング）の基礎——学生のうちに押さえておきたい仕組みと対処](/blog/icing-basics-2026/)
 - [現役パイロットが教える、国内ヘリコプター訓練のリアル](/blog/helicopter-training-japan-2026/)
+
+---
+
+**画像出典**：Wikimedia Commons "IFR on top" by Original uploader was User:JGHowes at en.wikipedia
+
+(Origina（Attribution）

@@ -3,6 +3,7 @@ title: '災害時の救援航空機——「電話で許可申請」「包括的
 description: '災害発生時、ヘリコプター等による救援活動を円滑に進めるため、航空局は通常必要な許可申請（場外離着陸・最低安全高度以下の飛行・物件投下）について、電話による申請・包括的許可・口頭処分を認めています。東日本大震災を契機に整備された「災害時に救援活動を行う航空機に係る許可手続等に関する処理要領」を解説します。'
 pubDate: '2026-05-04'
 category: '最近の変更点'
+heroImage: '../../assets/posts/disaster-relief-aviation-procedures-2026-hero.jpg'
 ---
 
 地震・豪雨・火災・噴火など、国内で大規模災害が発生したとき、**ヘリコプターによる救援活動**は被害規模を左右する決定的な要素になります。
@@ -193,3 +194,7 @@ category: '最近の変更点'
 - [焼津ヘリ無許可離着陸事件と「不起訴」が意味するもの](/blog/yaizu-heli-unauthorized-landing-2026/)
 - [ヘリコプターによる山林火災消火——海外研究から見える「効率的な使い方」](/blog/helicopter-firefighting-2026/)
 - [【令和8年4月1日運用開始】東京消防庁が「林野火災注意報・警報」を新設](/blog/tokyo-forest-fire-2026/)
+
+---
+
+**画像出典**：Wikimedia Commons "JGSDF CH-47 helicopter carrying a vehicle" by Rikujojieitai Boueisho (Japan Ground Self-Defense Force ; 陸上（CC BY-SA 3.0）
