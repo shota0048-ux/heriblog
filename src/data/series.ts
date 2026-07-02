@@ -25,7 +25,11 @@ export const SERIES: SeriesDef[] = [
 		title: '北京・CITICタワー小型機衝突',
 		description:
 			'北京の超高層ビルに小型機が衝突した事故をきっかけに、中国の安全報告制度（SCASS）と情報統制、そして全国の一般航空を止めた異例の規制対応を読み解くシリーズです。',
-		ids: ['china-aviation-crm-scass-2026', 'china-general-aviation-grounding-2026'],
+		ids: [
+			'china-aviation-crm-scass-2026',
+			'china-general-aviation-grounding-2026',
+			'beijing-citic-nearmiss-a330-2026',
+		],
 	},
 	{
 		slug: 'mobile-battery',
