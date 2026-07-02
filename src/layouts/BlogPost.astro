@@ -12,11 +12,36 @@ import TableOfContents from '../components/TableOfContents.astro';
 type Props = CollectionEntry<'blog'>['data'] & { headings?: MarkdownHeading[] };
 
 const { title, description, pubDate, updatedDate, heroImage, category, headings } = Astro.props;
+
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	headline: title,
+	description: description,
+	datePublished: pubDate.toISOString(),
+	...(updatedDate && { dateModified: updatedDate.toISOString() }),
+	...(heroImage && { image: new URL(heroImage.src, Astro.site).href }),
+	...(category && { articleSection: category }),
+	inLanguage: 'ja',
+	mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+	author: {
+		'@type': 'Person',
+		name: 'ヘリブログ管理人',
+		description: '現役ヘリコプターパイロット',
+		url: new URL('/about', Astro.site).href,
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: 'ヘリブログ',
+		url: Astro.site?.href,
+	},
+};
 ---
 
 <html lang="ja">
 	<head>
 		<BaseHead title={title} description={description} image={heroImage} />
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 		<style>
 			.hero-banner {
 				position: relative;
@@ -131,7 +156,7 @@ const { title, description, pubDate, updatedDate, heroImage, category, headings 
 			<article data-pagefind-body>
 				{heroImage && (
 					<div class="hero-banner">
-						<Image width={1280} height={640} src={heroImage} alt="" data-pagefind-meta="image[src]" />
+						<Image width={1280} height={640} src={heroImage} alt={title} data-pagefind-meta="image[src]" />
 					</div>
 				)}
 				<div class="article-wrap">
