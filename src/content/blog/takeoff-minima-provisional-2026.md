@@ -89,9 +89,9 @@ heroImage: '../../assets/posts/takeoff-minima-provisional-hero.jpg'
 
 ### 関連記事
 
+- [着陸最低気象条件を読み解く——DA/MDA・RVR・CMVと、「暫定」と「飛行方式設定基準」の違い](/blog/landing-minima-provisional-2026)
 - [RVR（滑走路視距離）とは——METARとATISでの「報じられ方」を読み解く](/blog/rvr-metar-atis-2026)
 - [視認進入と目視進入は何が違う？——IFRの「見て降りる」2つの進入を整理する（日本版）](/blog/visual-contact-approach-2026)
-- [IFR運航でやりがちなオートパイロット5つのミス——G1000で学ぶ「ヘディング・高度・APR」の正しい使い方](/blog/autopilot-mistakes-ifr-2026)
 
 ---
 

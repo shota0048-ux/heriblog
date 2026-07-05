@@ -58,6 +58,18 @@ export const SERIES: SeriesDef[] = [
 		],
 	},
 	{
+		slug: 'ifr-minima-approach',
+		title: 'IFRの最低気象条件と進入方式',
+		description:
+			'離陸・着陸の最低気象条件（暫定基準と飛行方式設定基準の違い）、RVRの読み方、視認進入と目視進入の使い分けまで。IFRで「どこまで降りて、いつ見えていればいいか」を実務目線で整理するシリーズです。',
+		ids: [
+			'rvr-metar-atis-2026',
+			'visual-contact-approach-2026',
+			'takeoff-minima-provisional-2026',
+			'landing-minima-provisional-2026',
+		],
+	},
+	{
 		slug: 'runway-safety',
 		title: '滑走路の安全とリモート対空援助',
 		description:
