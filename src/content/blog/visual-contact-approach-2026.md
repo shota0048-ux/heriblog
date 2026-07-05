@@ -3,6 +3,7 @@ title: '視認進入と目視進入は何が違う？——IFRの「見て降り
 description: 'IFRで飛んでいる機が計器進入を省いて“見て降りる”方法に、視認進入（Visual Approach）と目視進入（Contact Approach）がある。名前も中身も紛らわしいこの2つは、①誰が言い出せるか、②必要な天候、が決定的に違う。直感に反して「目視進入」のほうが悪天候でも使える理由を、日本の管制方式基準をもとに現役パイロットが整理する。'
 pubDate: '2026-07-03'
 category: '基礎知識'
+tags: ['IFR']
 heroImage: '../../assets/posts/visual-contact-approach-hero.jpg'
 ---
 

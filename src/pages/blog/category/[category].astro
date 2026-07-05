@@ -7,17 +7,23 @@ import FormattedDate from '../../../components/FormattedDate.astro';
 import Header from '../../../components/Header.astro';
 import { SITE_TITLE } from '../../../consts';
 
-const categories = ['飛行記録', '機体解説', '航空事故解説', '資格・訓練', '最近の変更点'];
-
 export async function getStaticPaths() {
-	const allCategories = ['飛行記録', '機体解説', '航空事故解説', '資格・訓練', '最近の変更点'];
-	return allCategories.map((category) => ({
+	const all = await getCollection('blog');
+	const counts = {};
+	for (const p of all) {
+		if (p.data.category) counts[p.data.category] = (counts[p.data.category] || 0) + 1;
+	}
+	// 記事の多い順にカテゴリを並べ、全カテゴリのページを生成（ナビも同一リストを共有）
+	const categories = Object.entries(counts)
+		.sort((a, b) => b[1] - a[1])
+		.map(([name]) => name);
+	return categories.map((category) => ({
 		params: { category },
-		props: { category },
+		props: { category, categories },
 	}));
 }
 
-const { category } = Astro.props;
+const { category, categories } = Astro.props;
 const posts = (await getCollection('blog'))
 	.filter((post) => post.data.category === category)
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());

@@ -3,6 +3,7 @@ title: '着陸最低気象条件を読み解く——DA/MDA・RVR・CMVと、「
 description: '着陸の最低気象条件（Landing Minima）は、DA/MDA（判断・最低降下高度）＋必要視程（RVR/CMV）＋規定の視認目標、の3点セット。精密進入と非精密進入・周回進入で構造が変わり、旧来の暫定基準と2006年からの飛行方式設定基準でも値が動く。CMV倍率やOCA/OCHまで、離陸編に続いて実務目線で整理する。CAT II/IIIは扱わない。'
 pubDate: '2026-07-05'
 category: '基礎知識'
+tags: ['IFR']
 heroImage: '../../assets/posts/landing-minima-provisional-hero.jpg'
 ---
 

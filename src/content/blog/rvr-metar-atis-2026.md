@@ -3,6 +3,7 @@ title: 'RVR（滑走路視距離）とは——METARとATISでの「報じられ
 description: '低視程での離着陸を左右するRVR（滑走路視距離）。前方散乱計や透過率計でどう測り、なぜ地上視程より優先されるのか。そして実務で一番わからないのが「表記」だ。METARのR28/0600U、M/Pの意味、V（変動）、フィート表記、ATISでの読み上げまで、現役パイロットが具体例で解説する。'
 pubDate: '2026-07-01'
 category: '基礎知識'
+tags: ['IFR']
 heroImage: '../../assets/posts/rvr-metar-atis-hero.jpg'
 ---
 

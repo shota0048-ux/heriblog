@@ -3,6 +3,7 @@ title: '離陸最低気象条件を読み解く——「暫定基準」と「飛
 description: '離陸の最低気象条件（Take-off Minima）は「離陸できるか」ではなく「直後に何かあったとき戻って降りられるか」で決まる。だから進入方式・多発機・離陸代替空港で値が動く。旧来の暫定基準と2006年からの飛行方式設定基準の違いを、福島空港の具体値（RVR550m／視程1200m＋雲高1550ftなど）を使って実務目線で整理する。CAT II/IIIは扱わない。'
 pubDate: '2026-07-04'
 category: '基礎知識'
+tags: ['IFR']
 heroImage: '../../assets/posts/takeoff-minima-provisional-hero.jpg'
 ---
 

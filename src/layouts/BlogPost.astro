@@ -11,7 +11,7 @@ import TableOfContents from '../components/TableOfContents.astro';
 
 type Props = CollectionEntry<'blog'>['data'] & { headings?: MarkdownHeading[] };
 
-const { title, description, pubDate, updatedDate, heroImage, category, headings } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, category, tags, headings } = Astro.props;
 
 const jsonLd = {
 	'@context': 'https://schema.org',
@@ -69,6 +69,26 @@ const jsonLd = {
 				max-width: 760px;
 				margin: 0 auto;
 				padding: 0 1.5em;
+			}
+			.article-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin: 2.5em 0 0;
+				padding-top: 1.5em;
+				border-top: 1px solid var(--color-border);
+			}
+			.article-tag {
+				font-size: 0.85rem;
+				color: var(--color-accent);
+				background: rgba(182, 90, 59, 0.08);
+				border-radius: 999px;
+				padding: 0.3rem 0.85rem;
+				text-decoration: none;
+				transition: background 0.15s;
+			}
+			.article-tag:hover {
+				background: rgba(182, 90, 59, 0.16);
 			}
 			.article-header {
 				padding: 2.5em 0 2em;
@@ -178,6 +198,13 @@ const jsonLd = {
 					<div class="prose">
 						<slot />
 					</div>
+					{tags && tags.length > 0 && (
+						<div class="article-tags">
+							{tags.map((t) => (
+								<a href={`/blog/tag/${t}/`} class="article-tag">#{t}</a>
+							))}
+						</div>
+					)}
 					<Comments />
 				</div>
 			</article>

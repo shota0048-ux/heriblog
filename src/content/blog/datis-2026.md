@@ -3,6 +3,7 @@ title: 'D-ATISとは——音声ATISからデジタルATISへ、コックピッ�
 description: 'D-ATIS（Digital ATIS）は、空港の運用情報（気象・使用滑走路・NOTAM等）を音声ではなくデジタルテキストでコックピットに直接届けるサービスです。従来のVoice ATISとの違い、ACARS／VDL Mode 2の配信方式、コンテンツの中身、識別子（INFO ALFA等）の意味、メリット・限界・日本での状況を整理しました。'
 pubDate: '2026-05-18'
 category: '機体解説'
+tags: ['IFR']
 heroImage: '../../assets/posts/datis-hero.jpg'
 ---
 
