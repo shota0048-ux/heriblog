@@ -91,6 +91,7 @@ export const SERIES: SeriesDef[] = [
 			'heli-pilot-training-course-pipeline-2026',
 			'heli-pilot-experience-accumulation-2026',
 			'doctor-heli-suspension-mechanic-2026',
+			'heli-pilot-training-cost-support-2026',
 		],
 	},
 ];
