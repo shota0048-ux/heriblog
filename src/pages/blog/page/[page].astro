@@ -89,7 +89,7 @@ const { posts, currentPage, totalPages, totalCount } = Astro.props;
 		<main>
 			<h1 class="page-title">記事一覧</h1>
 			<p class="page-sub">{totalCount} 件の記事（{currentPage} / {totalPages} ページ）</p>
-			<p class="search-link"><a href="/search">🔍 記事を検索する</a></p>
+			<p class="search-link"><a href="/search/">🔍 記事を検索する</a></p>
 			<PostGrid posts={posts} />
 			<Pagination currentPage={currentPage} totalPages={totalPages} />
 		</main>

@@ -1,6 +1,6 @@
 ---
 const { currentPage, totalPages } = Astro.props;
-const pageUrl = (p) => (p === 1 ? '/blog' : `/blog/page/${p}`);
+const pageUrl = (p) => (p === 1 ? '/blog/' : `/blog/page/${p}/`);
 const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 ---
 

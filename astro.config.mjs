@@ -9,6 +9,7 @@ import rehypeSlug from 'rehype-slug';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://heli-coblog.com',
+	trailingSlash: 'always',
 	integrations: [mdx(), sitemap()],
 	markdown: {
 		rehypePlugins: [
