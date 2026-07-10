@@ -18,6 +18,7 @@ export const SERIES: SeriesDef[] = [
 			'doctor-heli-mechanic-onboard-deepdive-2026',
 			'doctor-heli-suspension-mechanic-2026',
 			'doctor-heli-review-committee-2026',
+			'doctor-heli-two-pilot-hyogo-2026',
 		],
 	},
 	{
