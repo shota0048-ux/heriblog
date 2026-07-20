@@ -20,6 +20,7 @@ export const SERIES: SeriesDef[] = [
 			'doctor-heli-review-committee-2026',
 			'doctor-heli-two-pilot-hyogo-2026',
 			'doctor-heli-budget-2027-2026',
+			'doctor-heli-doctors-survey-2026',
 		],
 	},
 	{
