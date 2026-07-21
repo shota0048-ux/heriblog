@@ -33,6 +33,7 @@ export const SERIES: SeriesDef[] = [
 			'china-general-aviation-grounding-2026',
 			'beijing-citic-nearmiss-a330-2026',
 			'beijing-citic-cause-personal-2026',
+			'beijing-crash-operator-suspend-2026',
 		],
 	},
 	{
