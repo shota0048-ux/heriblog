@@ -84,9 +84,9 @@ heroImage: '../../assets/posts/tanabata-heli-hero.jpg'
 
 ### 関連記事
 
-- [ヘリコプターパイロットになるには「いくら・何年」かかるのか？](/blog/helicopter-pilot-cost-time-2026)
-- [航空緊急通信の完全ガイド——MAYDAYとPAN-PAN、MAYDAY FUELの違いを整理する（日本版）](/blog/emergency-radio-communication-2026)
-- [Argo「AH23」とは——R22と比べてわかる“新しい2人乗りヘリ”の立ち位置](/blog/ah23-vs-r22-2026)
+- [ヘリコプターパイロットになるには「いくら・何年」かかるのか？](/blog/helicopter-pilot-cost-time-2026/)
+- [航空緊急通信の完全ガイド——MAYDAYとPAN-PAN、MAYDAY FUELの違いを整理する（日本版）](/blog/emergency-radio-communication-2026/)
+- [Argo「AH23」とは——R22と比べてわかる“新しい2人乗りヘリ”の立ち位置](/blog/ah23-vs-r22-2026/)
 
 ---
 

@@ -87,9 +87,9 @@ heroImage: '../../assets/posts/heli-parts-fall-news-hero.jpg'
 
 ### 関連記事
 
-- [ドローンが墜落したら「事故扱い」になる——無人航空機の事故・重大インシデント報告制度](/blog/drone-crash-accident-report-2026)
-- [なぜ電線はヘリを墜とし続けるのか——「見えない脅威」を検知・防護・予防で捉え直す](/blog/wire-strike-hidden-threat-2026)
-- [阿蘇山・火口に墜落したヘリの引き上げ計画が承認——今後の回収作業に注目](/blog/aso-heli-salvage-2026)
+- [ドローンが墜落したら「事故扱い」になる——無人航空機の事故・重大インシデント報告制度](/blog/drone-crash-accident-report-2026/)
+- [なぜ電線はヘリを墜とし続けるのか——「見えない脅威」を検知・防護・予防で捉え直す](/blog/wire-strike-hidden-threat-2026/)
+- [阿蘇山・火口に墜落したヘリの引き上げ計画が承認——今後の回収作業に注目](/blog/aso-heli-salvage-2026/)
 
 ---
 

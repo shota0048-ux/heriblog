@@ -80,9 +80,9 @@ IFR（計器飛行方式）で飛んでいても、最後は「滑走路が見�
 
 ### 関連記事
 
-- [RVR（滑走路視距離）とは——METARとATISでの「報じられ方」を読み解く](/blog/rvr-metar-atis-2026)
-- [「グライドパス停止線」とは何か——ILSの電波を守る誘導路の停止線と、令和6年の運用見直し](/blog/glidepath-holdline-2026)
-- [IFR運航でやりがちなオートパイロット5つのミス——G1000で学ぶ「ヘディング・高度・APR」の正しい使い方](/blog/autopilot-mistakes-ifr-2026)
+- [RVR（滑走路視距離）とは——METARとATISでの「報じられ方」を読み解く](/blog/rvr-metar-atis-2026/)
+- [「グライドパス停止線」とは何か——ILSの電波を守る誘導路の停止線と、令和6年の運用見直し](/blog/glidepath-holdline-2026/)
+- [IFR運航でやりがちなオートパイロット5つのミス——G1000で学ぶ「ヘディング・高度・APR」の正しい使い方](/blog/autopilot-mistakes-ifr-2026/)
 
 ---
 

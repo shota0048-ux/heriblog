@@ -74,9 +74,9 @@ heroImage: '../../assets/posts/laser-aircraft-crime-hero.jpg'
 
 ### 関連記事
 
-- [なぜ電線はヘリを墜とし続けるのか——「見えない脅威」を検知・防護・予防で捉え直す](/blog/wire-strike-hidden-threat-2026)
-- [「グリーン・ドット症候群」——緑の点だけ見て飛んではいけない理由（FAA Safety Team／USHST）](/blog/green-dot-syndrome-2026)
-- [焼津ヘリ無許可離着陸事件と「不起訴」が意味するもの——現役パイロットが押さえておきたい論点整理](/blog/yaizu-heli-unauthorized-landing-2026)
+- [なぜ電線はヘリを墜とし続けるのか——「見えない脅威」を検知・防護・予防で捉え直す](/blog/wire-strike-hidden-threat-2026/)
+- [「グリーン・ドット症候群」——緑の点だけ見て飛んではいけない理由（FAA Safety Team／USHST）](/blog/green-dot-syndrome-2026/)
+- [焼津ヘリ無許可離着陸事件と「不起訴」が意味するもの——現役パイロットが押さえておきたい論点整理](/blog/yaizu-heli-unauthorized-landing-2026/)
 
 ---
 

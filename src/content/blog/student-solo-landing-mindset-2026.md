@@ -40,9 +40,9 @@ CNNなど各社の報道によると、2026年7月4日、アルゼンチン中�
 
 ### 関連記事
 
-- [航空緊急通信の完全ガイド——MAYDAYとPAN-PAN、MAYDAY FUELの違いを整理する（日本版）](/blog/emergency-radio-communication-2026)
-- [CRM／AMRMとは何か——「個人技量だけでは事故は防げない」NASAから始まった安全文化の中身](/blog/crm-amrm-2026)
-- [「技能発揮訓練（CRM訓練）」が全パイロットに【2028年義務化】——羽田事故から始まる再発防止策](/blog/skill-demonstration-training-2026)
+- [航空緊急通信の完全ガイド——MAYDAYとPAN-PAN、MAYDAY FUELの違いを整理する（日本版）](/blog/emergency-radio-communication-2026/)
+- [CRM／AMRMとは何か——「個人技量だけでは事故は防げない」NASAから始まった安全文化の中身](/blog/crm-amrm-2026/)
+- [「技能発揮訓練（CRM訓練）」が全パイロットに【2028年義務化】——羽田事故から始まる再発防止策](/blog/skill-demonstration-training-2026/)
 
 ---
 

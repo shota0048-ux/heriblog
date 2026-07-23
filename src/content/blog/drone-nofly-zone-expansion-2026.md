@@ -70,7 +70,7 @@ heroImage: '../../assets/posts/drone-nofly-2026-hero.jpg'
 
 - 警察庁・防衛省・国土交通省が、対象施設と禁止区域の情報を公表している。
 - 地理院地図などで、レッド／イエローゾーンを重ねて確認できる。
-- そして手前味噌だが、私たちが運営する[**NOTAM Map Japan**](https://notam.heli-coblog.com)でも、ドローン運航に関わる空域・情報を地図で確認できるようにしている（[大型アップデートでドローン情報も拡充](/blog/notam-map-major-update-2026)した）。飛行前のワンチェックに使ってもらえたら嬉しい。
+- そして手前味噌だが、私たちが運営する[**NOTAM Map Japan**](https://notam.heli-coblog.com)でも、ドローン運航に関わる空域・情報を地図で確認できるようにしている（[大型アップデートでドローン情報も拡充](/blog/notam-map-major-update-2026/)した）。飛行前のワンチェックに使ってもらえたら嬉しい。
 
 ドローンは、産業でも趣味でも、もはや空の重要なプレイヤーだ。だからこそ「知らずに飛ばして重要施設に近づく」事故は、業界全体の信用を損なう。今回の規制強化は窮屈に感じるかもしれないが、**空を共有する一員としてのマナーと安全**を、あらためて確認する機会にしたい。
 
@@ -84,9 +84,9 @@ heroImage: '../../assets/posts/drone-nofly-2026-hero.jpg'
 
 ### 関連記事
 
-- [ドローンが墜落したら「事故扱い」になる——無人航空機の事故・重大インシデント報告制度](/blog/drone-crash-accident-report-2026)
-- [NOTAM Map Japan 大型アップデート（AIC一覧・UI改善・ドローン情報365件など）](/blog/notam-map-major-update-2026)
-- [電波は「上空で使う」と話が変わる——携帯電話の上空利用を整理する](/blog/radio-altitude-cellular-2026)
+- [ドローンが墜落したら「事故扱い」になる——無人航空機の事故・重大インシデント報告制度](/blog/drone-crash-accident-report-2026/)
+- [NOTAM Map Japan 大型アップデート（AIC一覧・UI改善・ドローン情報365件など）](/blog/notam-map-major-update-2026/)
+- [電波は「上空で使う」と話が変わる——携帯電話の上空利用を整理する](/blog/radio-altitude-cellular-2026/)
 
 ---
 

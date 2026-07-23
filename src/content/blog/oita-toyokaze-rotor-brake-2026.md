@@ -100,9 +100,9 @@ heroImage: '../../assets/posts/oita-toyokaze-rotor-brake-hero.jpg'
 
 ### 関連記事
 
-- [そのヘリは、誰が操縦しているのか──消防防災ヘリ「運航形態」の知られざる話](/blog/fire-disaster-heli-operation-2026)
-- [災害時の救援航空機——「電話で許可申請」「包括的許可」が認められる仕組み](/blog/disaster-relief-aviation-procedures-2026)
-- [整備士が足りないのは日本だけ？ 待遇と養成制度を米欧日で比べてみた](/blog/aircraft-mechanic-shortage-comparison-2026)
+- [そのヘリは、誰が操縦しているのか──消防防災ヘリ「運航形態」の知られざる話](/blog/fire-disaster-heli-operation-2026/)
+- [災害時の救援航空機——「電話で許可申請」「包括的許可」が認められる仕組み](/blog/disaster-relief-aviation-procedures-2026/)
+- [整備士が足りないのは日本だけ？ 待遇と養成制度を米欧日で比べてみた](/blog/aircraft-mechanic-shortage-comparison-2026/)
 
 ---
 

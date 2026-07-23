@@ -93,9 +93,9 @@ AIPはAIRACサイクルに従って更新され、緊急の変更はNOTAMで即�
 
 ### 関連記事
 
-- [視認進入と目視進入は何が違う？——IFRの「見て降りる」2つの進入を整理する（日本版）](/blog/visual-contact-approach-2026)
-- [着陸最低気象条件を読み解く——DA/MDA・RVR・CMVと、「暫定」と「飛行方式設定基準」の違い](/blog/landing-minima-provisional-2026)
-- [航空緊急通信の完全ガイド——MAYDAYとPAN-PAN、MAYDAY FUELの違いを整理する（日本版）](/blog/emergency-radio-communication-2026)
+- [視認進入と目視進入は何が違う？——IFRの「見て降りる」2つの進入を整理する（日本版）](/blog/visual-contact-approach-2026/)
+- [着陸最低気象条件を読み解く——DA/MDA・RVR・CMVと、「暫定」と「飛行方式設定基準」の違い](/blog/landing-minima-provisional-2026/)
+- [航空緊急通信の完全ガイド——MAYDAYとPAN-PAN、MAYDAY FUELの違いを整理する（日本版）](/blog/emergency-radio-communication-2026/)
 
 ---
 

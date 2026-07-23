@@ -89,8 +89,8 @@ heroImage: '../../assets/posts/radio-altitude-cellular-hero.jpg'
 
 ### 関連記事
 
-- [上空150m以上での携帯電話利用が解禁——総務省の規制改正とヘリコプターへの意味](/blog/lte-altitude-reform-2022)
-- [航空緊急通信の完全ガイド——MAYDAYとPAN-PAN、MAYDAY FUELの違いを整理する（日本版）](/blog/emergency-radio-communication-2026)
+- [上空150m以上での携帯電話利用が解禁——総務省の規制改正とヘリコプターへの意味](/blog/lte-altitude-reform-2022/)
+- [航空緊急通信の完全ガイド——MAYDAYとPAN-PAN、MAYDAY FUELの違いを整理する（日本版）](/blog/emergency-radio-communication-2026/)
 
 ---
 
