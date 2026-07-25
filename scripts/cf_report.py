@@ -10,6 +10,11 @@
     python scripts/cf_report.py --weeks 8    # 8週分の推移
     python scripts/cf_report.py --days 14    # 人気ページ/流入元の集計期間を14日に
 
+    # 詳細レポート（デバイス／流入元／記事ランキング・既定30日）
+    python scripts/cf_report.py --detail                     # 全サイト
+    python scripts/cf_report.py --detail heli-coblog.com     # ブログのみ
+    python scripts/cf_report.py --detail --detail-days 90    # 90日分
+
 事前準備（1回だけ）:
     Cloudflare で「Account Analytics: 読み取り」権限の API トークンを発行し、
     シェルに設定する（wrangler のデプロイを壊さないため CLOUDFLARE_API_TOKEN
@@ -73,10 +78,12 @@ def iso(dt: datetime) -> str:
     return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def groups(since: datetime, until: datetime, dims: str, limit: int = 1000) -> list:
+def groups(since: datetime, until: datetime, dims: str, limit: int = 1000,
+           host: str = "") -> list:
+    host_filter = f', requestHost: "{host}"' if host else ""
     q = f'''query {{ viewer {{ accounts(filter: {{accountTag: "{ACCOUNT_ID}"}}) {{
       rumPageloadEventsAdaptiveGroups(
-        filter: {{datetime_geq: "{iso(since)}", datetime_leq: "{iso(until)}"}}
+        filter: {{datetime_geq: "{iso(since)}", datetime_leq: "{iso(until)}"{host_filter}}}
         limit: {limit}
       ) {{ count sum {{ visits }} dimensions {{ {dims} }} }} }} }} }}'''
     return gql(q)["rumPageloadEventsAdaptiveGroups"]
@@ -86,10 +93,59 @@ def label_of(host: str) -> str:
     return LABELS.get(host, host)
 
 
+def is_article(path: str) -> bool:
+    """記事ページ（/blog/<slug>/）か。一覧・タグ・カテゴリ・特集は除く。"""
+    return (path.startswith("/blog/") and path.count("/") == 3
+            and not path.startswith(("/blog/page", "/blog/tag",
+                                     "/blog/category", "/blog/series")))
+
+
+def detail_report(host: str, days: int, now: datetime) -> None:
+    """1サイトの詳細（デバイス・流入元・記事ランキング）"""
+    since = now - timedelta(days=days)
+    print("\n" + "=" * 62)
+    print(f"■ 【{label_of(host)}】直近{days}日の詳細")
+    print("=" * 62)
+
+    # デバイス
+    agg = defaultdict(int)
+    for r in groups(since, now, "deviceType", host=host):
+        agg[r["dimensions"]["deviceType"]] += r["count"]
+    total = sum(agg.values()) or 1
+    print("\n▼ デバイス")
+    for k, v in sorted(agg.items(), key=lambda x: -x[1]):
+        print(f"  {k:<10}{v:>7} PV ({v / total * 100:.0f}%)")
+
+    # 流入元
+    agg = defaultdict(int)
+    for r in groups(since, now, "refererHost", host=host):
+        agg[r["dimensions"]["refererHost"] or "(直接/不明)"] += r["count"]
+    print("\n▼ 流入元 TOP10")
+    for k, v in sorted(agg.items(), key=lambda x: -x[1])[:10]:
+        print(f"  {v:>7} PV  {k}")
+
+    # 記事ランキング（/blog/ 配下がある場合のみ）
+    agg = defaultdict(int)
+    for r in groups(since, now, "requestPath", host=host):
+        p = r["dimensions"]["requestPath"]
+        if is_article(p):
+            agg[p] += r["count"]
+    if agg:
+        print("\n▼ 記事ランキング TOP15")
+        for k, v in sorted(agg.items(), key=lambda x: -x[1])[:15]:
+            print(f"  {v:>6} PV  {k}")
+        print(f"  （記事ページ合計 {sum(agg.values())} PV / {len(agg)} 記事）")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Cloudflare Web Analytics レポート")
     ap.add_argument("--weeks", type=int, default=4, help="週次推移の週数（既定4）")
     ap.add_argument("--days", type=int, default=7, help="人気ページ/流入元の集計日数（既定7）")
+    ap.add_argument("--detail", nargs="?", const="all", metavar="HOST",
+                    help="詳細レポート（デバイス/流入元/記事ランキング）。"
+                         "ホスト名指定で1サイトのみ、省略で全サイト")
+    ap.add_argument("--detail-days", type=int, default=30,
+                    help="詳細レポートの集計日数（既定30）")
     args = ap.parse_args()
 
     if not TOKEN:
@@ -105,6 +161,17 @@ def main() -> None:
     hosts = [h for h, _ in sorted(totals.items(), key=lambda x: -x[1])]
     if not hosts:
         die("対象期間にデータがありません。")
+
+    # ── 詳細レポート（--detail 指定時はこれだけ出して終了）──
+    if args.detail:
+        targets = hosts if args.detail == "all" else [args.detail]
+        unknown = [h for h in targets if h not in hosts]
+        if unknown:
+            die(f"ホスト {unknown[0]} のデータがありません。候補: {', '.join(hosts)}")
+        for host in targets:
+            detail_report(host, args.detail_days, now)
+        print("\n※ 数値はCloudflareのサンプリング補正値。傾向把握用。")
+        return
 
     # ── 週次推移 ──
     print("=" * 62)
