@@ -9,6 +9,16 @@ export interface SeriesDef {
 
 export const SERIES: SeriesDef[] = [
 	{
+		slug: 'laser-aircraft',
+		title: '航空機へのレーザー照射',
+		description:
+			'飛行中の航空機への緑レーザー照射は何の罪になるのか。報道ヘリから自衛隊機まで相次ぐ事案を題材に、航空法134条の3・威力業務妨害・航空危険罪の射程と実際の量刑を読み解くシリーズです。',
+		ids: [
+			'laser-aircraft-crime-2026',
+			'laser-jgsdf-heli-hokkaido-2026',
+		],
+	},
+	{
 		slug: 'doctor-heli',
 		title: 'ドクターヘリの担い手問題',
 		description:
