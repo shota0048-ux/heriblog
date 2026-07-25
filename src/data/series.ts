@@ -9,6 +9,16 @@ export interface SeriesDef {
 
 export const SERIES: SeriesDef[] = [
 	{
+		slug: 'crm-decision',
+		title: 'CRMと「決めること」',
+		description:
+			'意見を集めれば安全になる、という思い込みを解きほぐすシリーズ。権威勾配は急すぎても平坦すぎても事故を招きます。「意見収集」と「決定」を分けて考える枠組みを、CRMの歴史と実際の事故から整理していきます。',
+		ids: [
+			'crm-amrm-2026',
+			'crm-authority-gradient-2026',
+		],
+	},
+	{
 		slug: 'laser-aircraft',
 		title: '航空機へのレーザー照射',
 		description:
