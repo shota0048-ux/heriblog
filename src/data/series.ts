@@ -18,6 +18,7 @@ export const SERIES: SeriesDef[] = [
 			'crm-authority-gradient-2026',
 			'crm-assertion-silence-2026',
 			'crm-time-decision-2026',
+			'crm-briefing-expectation-2026',
 		],
 	},
 	{
