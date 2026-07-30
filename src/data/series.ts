@@ -19,6 +19,7 @@ export const SERIES: SeriesDef[] = [
 			'crm-assertion-silence-2026',
 			'crm-time-decision-2026',
 			'crm-briefing-expectation-2026',
+			'crm-organization-decision-2026',
 		],
 	},
 	{
