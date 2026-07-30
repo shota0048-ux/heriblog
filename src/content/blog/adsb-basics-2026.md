@@ -3,7 +3,7 @@ title: 'ADS-Bとは何か——「放送型自動位置情報」の仕組み・�
 description: 'ADS-B（放送型自動位置情報伝送システム）は、航空機がGPSなどから得た自機位置を自動で放送する次世代の航空監視技術です。SSRレーダーとの違い、Out/Inの2機能、UAT/1090ESの物理レイヤー、FIS-B/TIS-B/ADS-Rサービス、メリットとセキュリティ課題を整理しました。'
 pubDate: '2026-05-14'
 category: '機体解説'
-heroImage: '../../assets/posts/adsb-hero.png'
+heroImage: '../../assets/posts/adsb-hero.jpg'
 ---
 
 > ヘッダー画像：Flightradar24のADS-B受信機。撮影：Nubifer（[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Flightradar24_ADS-B_receiver.png)）／ライセンス：[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) ／本記事への掲載にあたり画像のリサイズを行いました。

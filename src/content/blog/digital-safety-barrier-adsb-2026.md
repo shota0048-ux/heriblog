@@ -4,7 +4,7 @@ description: '新千歳空港で、GPSで作業員・車両の位置を把握し
 pubDate: '2026-07-23'
 category: '最近の変更点'
 tags: ['航空安全']
-heroImage: '../../assets/posts/digital-safety-barrier-adsb-hero.png'
+heroImage: '../../assets/posts/digital-safety-barrier-adsb-hero.jpg'
 ---
 
 面白い試みが始まっている。**新千歳空港で「デジタル安全バリア」の試験運用**がスタートした、というニュースだ（STV、2026年7月）。
