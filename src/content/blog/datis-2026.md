@@ -11,7 +11,7 @@ heroImage: '../../assets/posts/datis-hero.jpg'
 
 「**ATIS（Automatic Terminal Information Service／自動空港情報放送業務）**」——空港の現況をパイロットに伝える、無線運用の基盤的サービスです。
 
-訓練生のうちに必ず学ぶこの仕組みは、近年 **デジタル化**されて、**D-ATIS（Digital ATIS）**として運用されています。本記事では、
+訓練生のうちに必ず学ぶこの仕組みは、近年 **デジタル化**されて、<strong>D-ATIS（Digital ATIS）</strong>として運用されています。本記事では、
 
 - ATISの基本（音声版）
 - D-ATISが何を変えたのか
@@ -26,7 +26,7 @@ heroImage: '../../assets/posts/datis-hero.jpg'
 
 ## ① そもそもATISとは
 
-**ATIS（Automatic Terminal Information Service）**は、
+<strong>ATIS（Automatic Terminal Information Service）</strong>は、
 
 > **空港の運用情報を、決まった周波数で繰り返し放送する自動サービス**。
 
@@ -87,7 +87,7 @@ ATISは **1960年代半ばに米国FAAが導入**、その後 **1974年にICAO�
 
 ## ③ どうやってコックピットに届くのか
 
-D-ATISの配信は、主に**ACARS（Aircraft Communications Addressing and Reporting System）**を経由します。
+D-ATISの配信は、主に<strong>ACARS（Aircraft Communications Addressing and Reporting System）</strong>を経由します。
 
 ### ACARSとは
 
@@ -112,7 +112,7 @@ D-ATISの配信は、主に**ACARS（Aircraft Communications Addressing and Repo
 
 ## ④ ATIS識別子（INFO ALFA, BRAVO...）の意味
 
-ATISは更新のたびに**識別子（フォネティック・アルファベット）**が付けられます：
+ATISは更新のたびに<strong>識別子（フォネティック・アルファベット）</strong>が付けられます：
 
 - INFO **ALFA**
 - INFO **BRAVO**
@@ -180,7 +180,7 @@ D-ATISは**主要空港のみ**で運用。中規模・地方空港では音声A
 
 ### 5. 「読まれていない」リスク
 
-音声と違って**強制的に聞かされない**ため、**「届いたのに読んでいない」**事故事例も発生しています（管制から「Charlie received?」と聞かれて初めて気づくケース）。
+音声と違って**強制的に聞かされない**ため、<strong>「届いたのに読んでいない」</strong>事故事例も発生しています（管制から「Charlie received?」と聞かれて初めて気づくケース）。
 
 ---
 
@@ -244,11 +244,11 @@ D-ATIS非対応機体では、**音声ATISをメモする習慣**を訓練段階
 
 ATISは1960年代に作られた仕組みですが、**60年経った今でも世界中の空港運用の基盤**として機能しています。**シンプルで明確な情報を、全パイロットに同時に届ける**——という設計思想が、いまも色褪せていないからこそです。
 
-D-ATISは、それを**「音声から文字へ」と進化させた**だけで、本質は同じ。
+D-ATISは、それを<strong>「音声から文字へ」と進化させた</strong>だけで、本質は同じ。
 
 > **シンプルな仕組みを、技術の進歩に合わせて改良し続ける**。
 
-これは航空業界における**「枯れた技術の進化」**の好例だと思います。新しい技術が次々に登場する中で、**「これまで積み上げてきた仕組みを、どう次の世代に渡していくか」**——この発想は、ヘリコプター運航にも、訓練にも、共通する大事な視点です。
+これは航空業界における<strong>「枯れた技術の進化」</strong>の好例だと思います。新しい技術が次々に登場する中で、**「これまで積み上げてきた仕組みを、どう次の世代に渡していくか」**——この発想は、ヘリコプター運航にも、訓練にも、共通する大事な視点です。
 
 ヘリパイロットがD-ATISを直接使う場面は限られますが、「**ATIS／NOTAMで届く情報の構造**」を理解しておくことは、いつか必ず役に立ちます。
 

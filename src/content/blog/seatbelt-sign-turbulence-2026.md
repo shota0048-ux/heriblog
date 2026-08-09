@@ -33,7 +33,7 @@ heroImage: '../../assets/posts/seatbelt-sign-turbulence-hero.jpg'
 
 ## 本当の“犯人”は晴天乱気流（CAT）
 
-では、なぜ機長は揺れを予想しきれず、サインを消したまま突然の揺れに遭うのか。多くの場合、原因は**晴天乱気流（CAT：Clear-Air Turbulence）**だ。
+では、なぜ機長は揺れを予想しきれず、サインを消したまま突然の揺れに遭うのか。多くの場合、原因は<strong>晴天乱気流（CAT：Clear-Air Turbulence）</strong>だ。
 
 CATは、その名のとおり**雲もないのに起きる乱気流**。やっかいなのは、
 
