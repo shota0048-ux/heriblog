@@ -122,6 +122,7 @@ export const SERIES: SeriesDef[] = [
 			'heli-pilot-training-cost-support-2026',
 			'koudai-heli-instructor-2026',
 			'heli-pilot-supply-demand-2026',
+			'heli-pilot-age-structure-2026',
 		],
 	},
 ];
