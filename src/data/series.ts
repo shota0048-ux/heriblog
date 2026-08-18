@@ -134,6 +134,7 @@ export const SERIES: SeriesDef[] = [
 			'gps-vfr-circular-2026',
 			'tso-c146-2026',
 			'gps-ifr-circular-2026',
+			'ac20-138-2026',
 		],
 	},
 ];
