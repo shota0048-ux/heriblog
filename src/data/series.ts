@@ -125,4 +125,15 @@ export const SERIES: SeriesDef[] = [
 			'heli-pilot-age-structure-2026',
 		],
 	},
+	{
+		slug: 'gps-navigation',
+		title: 'GPS航法の基準を読む',
+		description:
+			'有視界飛行方式の5-006、装置側の技術基準であるTSO-C146、そして計器飛行方式の5-005。「GPSを航法に使う」ために何が求められるのかを、通達と技術基準の両側から読み解くシリーズです。',
+		ids: [
+			'gps-vfr-circular-2026',
+			'tso-c146-2026',
+			'gps-ifr-circular-2026',
+		],
+	},
 ];
