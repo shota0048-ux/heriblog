@@ -16,7 +16,7 @@ export default defineConfig({
 			rehypeSlug,
 			[rehypeAutolinkHeadings, {
 				behavior: 'append',
-				properties: { className: ['heading-anchor'], ariaLabel: 'この見出しへのリンク' },
+				properties: { className: ['heading-anchor'], ariaLabel: 'この見出しへのリンク', 'data-pagefind-ignore': true },
 				content: { type: 'text', value: ' #' },
 			}],
 		],

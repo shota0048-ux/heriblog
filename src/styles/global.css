@@ -282,16 +282,25 @@ li {
 	transition: opacity 0.2s;
 }
 
-h1:hover .heading-anchor,
-h2:hover .heading-anchor,
-h3:hover .heading-anchor,
-h4:hover .heading-anchor,
-h5:hover .heading-anchor,
-h6:hover .heading-anchor {
-	opacity: 1;
+/* hover のない端末（スマホ・タブレット）では、タップで hover 状態が残り
+   「#」が出っぱなしになるため、hover 可能な環境に限定する */
+@media (hover: hover) {
+	h1:hover .heading-anchor,
+	h2:hover .heading-anchor,
+	h3:hover .heading-anchor,
+	h4:hover .heading-anchor,
+	h5:hover .heading-anchor,
+	h6:hover .heading-anchor {
+		opacity: 1;
+	}
+
+	.heading-anchor:hover {
+		color: var(--color-accent);
+	}
 }
 
-.heading-anchor:hover {
+.heading-anchor:focus-visible {
+	opacity: 1;
 	color: var(--color-accent);
 }
 
