@@ -135,6 +135,7 @@ export const SERIES: SeriesDef[] = [
 			'tso-c146-2026',
 			'gps-ifr-circular-2026',
 			'ac20-138-2026',
+			'rnav-approval-2026',
 		],
 	},
 ];
