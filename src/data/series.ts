@@ -95,6 +95,7 @@ export const SERIES: SeriesDef[] = [
 			'visual-contact-approach-2026',
 			'takeoff-minima-provisional-2026',
 			'landing-minima-provisional-2026',
+			'lvp-lvpd-2026',
 		],
 	},
 	{
