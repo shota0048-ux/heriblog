@@ -96,6 +96,7 @@ export const SERIES: SeriesDef[] = [
 			'takeoff-minima-provisional-2026',
 			'landing-minima-provisional-2026',
 			'lvp-lvpd-2026',
+			'aimos-auto-metar-2026',
 		],
 	},
 	{
