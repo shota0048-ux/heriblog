@@ -1,7 +1,8 @@
 ---
 title: 'RAIMとは何か——衛星の異常が直るまで最大2時間、その空白を埋める仕組み'
-description: 'GPS航法の話に必ず出てくるRAIM（受信機による完全性の自律的監視）。位置の「精度」ではなく「完全性」を見張る機能で、5個の衛星（または4個＋気圧高度）が要ります。なぜ受信機が自分で監視しなければならないのか、FDEとの違い、警報が出たら何をするのか、そしてスプーフィングには半分しか効かないという限界まで整理します。'
+description: 'GPS航法の話に必ず出てくるRAIM（Receiver Autonomous Integrity Monitoring＝受信機による完全性の自律的監視）。位置の「精度」ではなく「完全性」を見張る機能で、5個の衛星（または4個＋気圧高度）が要ります。なぜ受信機が自分で監視しなければならないのか、FDEとの違い、警報が出たら何をするのか、そしてスプーフィングには半分しか効かないという限界まで整理します。'
 pubDate: '2026-08-22'
+updatedDate: '2026-08-22'
 category: '基礎知識'
 tags: ['IFR', '航空安全', '法規']
 heroImage: '../../assets/posts/raim-basics-hero.jpg'
@@ -10,6 +11,10 @@ heroImage: '../../assets/posts/raim-basics-hero.jpg'
 [サーキュラー5-005](/blog/gps-ifr-circular-2026/)、[AC 20-138D](/blog/ac20-138-2026/)、[RNAV航行の許可](/blog/rnav-approval-2026/)と読んできて、**どの文書にも必ず出てくる言葉**がありました。
 
 <strong>RAIM。</strong>「5分を超えて継続して失われることが予測される場合」「RAIM警報が発出された場合」——条文はRAIMを前提に書かれています。
+
+読みは<strong>「レイム」</strong>。綴りは<strong>Receiver Autonomous Integrity Monitoring</strong>で、日本の通達はこれを<strong>「受信機による完全性の自律的監視」</strong>と訳しています。
+
+<strong>Receiver（受信機が）／Autonomous（自律的に）／Integrity（完全性を）／Monitoring（監視する）</strong>——4語がそのまま機能の説明になっている、珍しく素直な略語です。**誰が・どうやって・何を**が名前に全部入っている。
 
 では、<strong>RAIMとは何なのか。</strong>今回はそれ自体を扱います。
 
@@ -30,6 +35,21 @@ heroImage: '../../assets/posts/raim-basics-hero.jpg'
 > **注：ABASの最も一般的な形態は、受信機による完全性の自律的監視（RAIM）である。**
 
 **補強（augmentation）には3種類あります。**[SBAS（衛星ベース）](/blog/tso-c146-2026/)、GBAS（地上ベース）、そして**ABAS（航空機ベース）**。RAIMは3つ目、**機上で完結する補強**です。
+
+### この記事に出てくる略語
+
+条文と英文資料を行き来するので、先に並べておきます。
+
+| 略語 | 綴り | 日本の通達での訳 |
+|---|---|---|
+| **GNSS** | Global Navigation Satellite System | 全地球的航法衛星システム |
+| **RAIM** | **Receiver Autonomous Integrity Monitoring** | **受信機による完全性の自律的監視** |
+| **FDE** | **Fault Detection and Exclusion** | **故障探知及び排除** |
+| **ABAS** | Aircraft-Based Augmentation System | 航空機ベースの補強システム |
+| **SBAS** | Satellite-Based Augmentation System | 衛星ベースの補強システム |
+| **GBAS** | Ground-Based Augmentation System | 地上ベースの補強システム |
+
+<strong>補強システムの3つは、頭文字が「どこに置くか」を表しています。</strong>A＝航空機、S＝衛星、G＝地上。RAIMだけは補強の**方式の名前**で、置き場所はABASと同じ機上です。
 
 ## 「精度」ではなく「完全性」
 
@@ -210,11 +230,11 @@ RAIMを調べて、いちばん印象に残ったのは<strong>「余分な1個�
 
 ## まとめ
 
-- <strong>RAIM（受信機による完全性の自律的監視）</strong>は、5-017の定義では<strong>ABASの一形態</strong>で、**GPS信号又は気圧高度により補強されたGPS信号のみを使用**して、受信機の処理プログラムが**航法信号の完全性を判断する**もの。**ABASの最も一般的な形態がRAIM**。
+- <strong>RAIM＝Receiver Autonomous Integrity Monitoring</strong>（受信機による完全性の自律的監視）。**Receiver／Autonomous／Integrity／Monitoring**の4語が、そのまま機能の説明になっている。5-017の定義では<strong>ABASの一形態</strong>で、**GPS信号又は気圧高度により補強されたGPS信号のみを使用**して、受信機の処理プログラムが**航法信号の完全性を判断する**もの。**ABASの最も一般的な形態がRAIM**。
 - 見張っているのは**精度ではなく完全性**。<strong>「RAIMがなければ、パイロットはGPS位置の完全性について何の保証も得られない」</strong>（FAA AIM）。
 - 必要な理由は<strong>「誤った衛星の送信が管制セグメントに検知され修正されるまで、最大2時間の遅れが生じうる」</strong>から。地上が気づくのを待てないので、**機上で即座に見張る**。
 - 仕組みは**余分な観測による答え合わせ**。<strong>測位だけなら4個、RAIM（探知）に5個、FDE（排除）に6個</strong>。**気圧高度補強を使えばそれぞれ4個・5個**。
-- <strong>探知＝RAIM、排除まで行くのがFDE</strong>。必要衛星数は**FDE ＞ RAIM ＞ 基本GPS**の階段になっており、「GPSは出ているがRAIMがない」状態が起こりうる。**5-005が洋上・遠隔でFDE予測を求める**のはこのため。
+- <strong>探知＝RAIM、排除まで行くのがFDE（Fault Detection and Exclusion＝故障探知及び排除）</strong>。必要衛星数は**FDE ＞ RAIM ＞ 基本GPS**の階段になっており、「GPSは出ているがRAIMがない」状態が起こりうる。**5-005が洋上・遠隔でFDE予測を求める**のはこのため。
 - **baro-aidingでは高度計規正値を受信機に入れる。**<strong>GPSが出した高度を使ってはならない</strong>——垂直誤差が大きく、**完全性監視そのものが無効になる**（5-005 2-2-2の思想と同じ）。
 - RAIMの可用性は**飛行フェーズで変わる**。<strong>洋上・エンルート・ターミナルはほぼ100％、落ちるとしたら進入</strong>（非精密進入のTSO要件が他のフェーズより格段に厳しいため）。
 - 警報は2種類。<strong>①衛星が足りず監視できない（位置は出ているが完全性が判定できない） ②異常を検知した</strong>。
