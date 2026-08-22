@@ -138,6 +138,7 @@ export const SERIES: SeriesDef[] = [
 			'gps-ifr-circular-2026',
 			'ac20-138-2026',
 			'rnav-approval-2026',
+			'raim-basics-2026',
 		],
 	},
 ];
