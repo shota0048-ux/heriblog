@@ -51,6 +51,8 @@ heroImage: '../../assets/posts/raim-basics-hero.jpg'
 
 <strong>補強システムの3つは、頭文字が「どこに置くか」を表しています。</strong>A＝航空機、S＝衛星、G＝地上。RAIMだけは補強の**方式の名前**で、置き場所はABASと同じ機上です。
 
+なお、この表に<strong>「FD」は入れていません。</strong>理由は後半の[RAIMとFDE](#raimとfde見つけると追い出す)で触れます。
+
 ## 「精度」ではなく「完全性」
 
 ここを取り違えると、話が全部ずれます。
@@ -118,6 +120,51 @@ Garminは、この関係をひとことで言っています。
 <strong>階段になっている。</strong>だから「GPSは出ているのにRAIMがない」「RAIMはあるのにFDEがない」という状態が、ふつうに起こります。
 
 **5-005が洋上・遠隔地域でだけFDE予測プログラムを要求する**のも、この階段のいちばん上を使うからです。洋上には代わりの航法手段がない——**排除して航法を続けられること**が、そこでは要件になります。
+
+### 「FD」とは呼ばない——Flight Directorと衝突する
+
+ここで一つ、用語の注意です。
+
+**探知だけの機能を fault detection（FD）、排除まで行くものを FDE** と対で呼ぶ書き方は、GNSSの技術文献では一般的です。AC 20-138D自身も、受信機をこう区別しています。
+
+> TSO-C129(AR) equipment may have either a <strong>fault detection-only algorithm</strong> or an **FDE algorithm**.
+
+<strong>「探知のみ」対「FDE」。</strong>概念としては、確かにFDとFDEは対になっています。
+
+<strong>しかし航空の文書では、「FD」という略号はすでに埋まっています。</strong>AC 20-138Dの略語表（Appendix 9）を引くと、こうです。
+
+| 略語 | AC 20-138Dでの定義 |
+|---|---|
+| **FD** | <strong>Flight Director</strong> |
+| **FDE** | Fault Detection and Exclusion |
+
+念のためAC 20-138D全文で単独の「FD」を数えると**43件**ありますが、<strong>すべてFlight Director（又はA/FD＝Airport/Facility Directory）</strong>で、fault detectionの意味で使われている箇所は**ありません**。
+
+> For all rotorcraft enroute RNP 0.3 operations, the use of an **autopilot and/or FD** is an acceptable means of complying with the FTE assumption
+
+FAAのAIMでも同様で、日本の5-005・5-017も<strong>「故障探知及び排除（FDE）」</strong>しか略語を置かず、探知だけを指すときは<strong>「故障探知の適正レベル」</strong>と漢字で書き下しています。
+
+<strong>技術の議論としては通じるが、運航の文脈で「FD」と言えばFlight Director。</strong>ここは分けておいたほうが安全です。
+
+### ややこしい点——RAIMとFDEの上下関係は、資料で逆になる
+
+もう一つ、混乱しやすいところがあります。
+
+**Garminの書き方**は、<strong>RAIMが部品でFDEが全体</strong>です。
+
+> **FDE consists of two distinct parts**: fault detection and fault exclusion. Fault detection **(RAIM)**…
+
+ところが**AC 20-138Dの定義**は、<strong>FDEがRAIMの一種</strong>という書き方をしています。
+
+> **Fault Detection and Exclusion (FDE).** <strong>A receiver autonomous integrity monitoring algorithm</strong> that can automatically detect and exclude a faulty satellite from the position solution…
+
+<strong>包含関係が逆に見えます。</strong>どちらも誤りではなく、<strong>「RAIM」を狭く（＝探知機能そのもの）取るか、広く（＝機上で完全性を検証する手法の総称）取るか</strong>の違いです。ACの定義は明確に広いほうを採っています。
+
+> **Receiver Autonomous Integrity Monitoring (RAIM).** <strong>Any algorithm that verifies the integrity of the position output using redundant GPS measurements, or using GPS measurements and barometric aiding, is considered a RAIM algorithm.</strong> An algorithm that uses additional information (e.g., multi-sensor system with inertial reference system) to verify the integrity of the position output may be acceptable as a <strong>RAIM-equivalent</strong>.
+
+<strong>冗長な観測、または観測＋気圧高度で完全性を検証するものは、すべてRAIMアルゴリズムとみなす。</strong>この定義なら、FDEもRAIMの中に収まります。
+
+そして最後の一文、<strong>RAIM-equivalent（RAIMと同等）</strong>。5-005が繰り返す<strong>「RAIM機能又はこれと同等な機能」</strong>という言い回しは、ここに対応しています。**慣性基準装置を組み合わせたマルチセンサーのように、別の情報を使って完全性を検証する方式**も、同等と認められうる——条文があの書き方をしている理由が、ACの定義側にありました。
 
 ## 気圧高度補強（baro-aiding）の落とし穴
 
@@ -234,7 +281,8 @@ RAIMを調べて、いちばん印象に残ったのは<strong>「余分な1個�
 - 見張っているのは**精度ではなく完全性**。<strong>「RAIMがなければ、パイロットはGPS位置の完全性について何の保証も得られない」</strong>（FAA AIM）。
 - 必要な理由は<strong>「誤った衛星の送信が管制セグメントに検知され修正されるまで、最大2時間の遅れが生じうる」</strong>から。地上が気づくのを待てないので、**機上で即座に見張る**。
 - 仕組みは**余分な観測による答え合わせ**。<strong>測位だけなら4個、RAIM（探知）に5個、FDE（排除）に6個</strong>。**気圧高度補強を使えばそれぞれ4個・5個**。
-- <strong>探知＝RAIM、排除まで行くのがFDE（Fault Detection and Exclusion＝故障探知及び排除）</strong>。必要衛星数は**FDE ＞ RAIM ＞ 基本GPS**の階段になっており、「GPSは出ているがRAIMがない」状態が起こりうる。**5-005が洋上・遠隔でFDE予測を求める**のはこのため。
+- <strong>探知＝RAIM、排除まで行くのがFDE（Fault Detection and Exclusion＝故障探知及び排除）</strong>。ただし<strong>航空文書で「FD」はFlight Director</strong>であり、探知だけを指す略号としては使われない（AC 20-138Dの略語表、及び同AC中の単独FD 43件はすべてFlight Director／A/FD）。日本の通達も略語は**FDEのみ**で、探知だけは「故障探知」と書き下す。
+- <strong>RAIMとFDEの包含関係は、資料によって逆に書かれる。</strong>Garminは「FDEは探知と排除の2部からなり、探知がRAIM」、AC 20-138Dは「**FDEはRAIMアルゴリズムの一種**」。**RAIMを狭く（探知機能）取るか広く（機上で完全性を検証する手法の総称）取るか**の違いで、ACは広いほうを採る。ACの<strong>RAIM-equivalent</strong>（慣性等の別情報を使う方式も同等と認めうる）が、5-005の<strong>「RAIM機能又はこれと同等な機能」</strong>に対応している。必要衛星数は**FDE ＞ RAIM ＞ 基本GPS**の階段になっており、「GPSは出ているがRAIMがない」状態が起こりうる。**5-005が洋上・遠隔でFDE予測を求める**のはこのため。
 - **baro-aidingでは高度計規正値を受信機に入れる。**<strong>GPSが出した高度を使ってはならない</strong>——垂直誤差が大きく、**完全性監視そのものが無効になる**（5-005 2-2-2の思想と同じ）。
 - RAIMの可用性は**飛行フェーズで変わる**。<strong>洋上・エンルート・ターミナルはほぼ100％、落ちるとしたら進入</strong>（非精密進入のTSO要件が他のフェーズより格段に厳しいため）。
 - 警報は2種類。<strong>①衛星が足りず監視できない（位置は出ているが完全性が判定できない） ②異常を検知した</strong>。
