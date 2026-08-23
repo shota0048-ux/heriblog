@@ -109,6 +109,7 @@ export const SERIES: SeriesDef[] = [
 			'wakkanai-runway-incursion-2026',
 			'haneda-runway-joint-heli-rollover-2026',
 			'haneda-runway-joint-committee-2026',
+			'taiku-center-2026',
 		],
 	},
 	{
