@@ -249,6 +249,75 @@ Garminのマニュアルも、はっきり書いています。
 
 <strong>SBASを積んでいれば安心、ではない。</strong>どこまでがSBASの中なのかを知っておく必要があります。
 
+### では、SBASがあれば衛星4個でもLPVができるのか
+
+ここでよく出る疑問があります。**SBASが完全性をくれるなら、RAIMの「5個」は関係ない。ということは、衛星が4個しか捕捉できなくてもLPVはできるのか？**
+
+<strong>前半は正しく、後半は成り立ちません。</strong>判定の物差しが、そもそも入れ替わっているからです。
+
+<strong>SBASの世界では、判定は「衛星が何個か」ではありません。</strong>AC 20-138Dが、垂直誘導を出せる条件をこう書いています。
+
+> The GPS/SBAS sensor must be **within the GPS/SBAS service volume** and **in an integrity mode that outputs a GPS/SBAS-generated VPL**.
+
+<strong>VPL（Vertical Protection Level＝垂直保護レベル）</strong>を出せる状態であること。そしてそのVPLが<strong>VAL（Vertical Alert Limit＝垂直警報限界）</strong>を下回らなければ、垂直誘導は出ません。ACはVALの値も示しています。
+
+> **GPS/SBAS vertical guidance with a 50m VAL** has been shown to be consistent with the required total system performance for operations down to RNP 0.23. **A 35m VAL** is consistent with required performance for operations down to RNP 0.1.
+
+<strong>垂直50m、LPV-200（DA 200ftまで）なら35m。</strong>5-017 附属書10のSIS要件も、<strong>水平40m／垂直50m（200ftまでのLPVは35m）</strong>を超える誤差に対し**6秒以内の警報**を求めています。
+
+<strong>そして保護レベルは、衛星の幾何配置で決まります。</strong>ACは苦しい状態をこう表現します。
+
+> in the event of a latent GNSS satellite failure and **marginal GNSS satellite geometry** (e.g., **HPL equal to HAL or VPL equal to VAL**)
+
+<strong>幾何が苦しくなると、保護レベルは警報限界に張り付く。</strong>衛星4個は**冗長ゼロで、幾何が最も苦しい状態**です。この配置でVPLが35〜50mを下回ることは、実務上まず期待できません。受信機はLPVを出さず、**LNAV/VNAVかLNAVへ落ちます**。
+
+要求の厳しさを並べると、桁が違うことが分かります。
+
+| 何を守るか | しきい値 |
+|---|---|
+| RNP APCH 最終進入（LNAV）の警報 | **0.6NM ≒ 1,111m** |
+| **LPVの垂直** | **50m**（LPV-200は**35m**） |
+| LPVの水平（SIS） | **40m** |
+
+<strong>RAIMが成立する条件と、LPVが成立する条件は、別の土俵の話</strong>なのです。
+
+### 混同しやすい「4個＋気圧高度」
+
+この疑問が生まれる原因は、たぶんAC 20-138Dのこの一文です。
+
+> Note: **Barometric aiding enables the equipment to continue providing integrity when only four satellites are available** for use in the position solution.
+
+<strong>確かに「4個でも完全性を提供し続けられる」と書いてあります。</strong>しかしこの一文が置かれているのは<strong>Appendix 1「GPS Oceanic/Remote Navigation」</strong>で、直前はこうです。
+
+> Equipment manufacturers may choose to provide further robustness for **oceanic and remote area operations** by including **barometric aiding in their FDE algorithms**.
+
+<strong>洋上・遠隔でのFDEアルゴリズムの頑健性の話</strong>——つまり**ABAS（RAIM/FDE）モード**であって、**SBASの垂直誘導とは別のモード**です。そもそも洋上のRNP 4／RNP 10が守る幅は**4NM／10NM**。LPVの35mとは、要求が5桁近く違います。
+
+### 実務では、衛星を数える場面がない
+
+もう一つ大事なのは、**この判断は装置がやる**ということです。5-017 附属書10が機能要件として求めています。
+
+> 航空機搭載システムは、**進入が選択されたときに、利用可能な最高の「サービスレベル」を自動的に提供しなければならない**（略）それはまた、**サービスの低下（例：LPVからLNAVへのダウングレード）のレベルを検出することができる**
+
+そして手順は、確認の仕方まで決めています。
+
+> 航空機乗組員は、**FAPの手前2NMの範囲において、GNSS進入モードがLP又はLPV（又は同等のもの）を表示していること**を確認しなければならない
+
+<strong>LP／LPVと表示されているかどうか。それが答えです。</strong>衛星数を数えて可否を判断する場面はありません。さらにFAP通過後は、<strong>垂直方向のガイダンスの喪失（横方向が出ていても）</strong>が起きれば、目視物標を視認できない限り**中止しなければならない**。
+
+なお**RAIM予測**そのものについても、Garminがはっきり書いています。
+
+> This feature predicts the availability of fault detection integrity. <strong>It cannot predict the availability of LPV or L/VNAV approaches.</strong>
+
+<strong>LPVの可否はNOTAMで確認する。</strong>衛星数の議論とは、最初から別レイヤーです。
+
+| 認識 | 判定 |
+|---|---|
+| SBASがあればRAIMの「5個」は判定基準でなくなる | <strong>正しい</strong> |
+| だから衛星4個でもLPVができる | <strong>成り立たない</strong> |
+
+※「4個ちょうどでもVPLが35mを下回ることは絶対にない」と断言する条文までは確認できていません。上記は**保護レベルの決まり方**と、ACが**marginal geometryをVPL=VALと表現している**ことからの整理です。
+
 ## RAIMの限界——「嘘のつき方」による
 
 最後に、押さえておくべき限界があります。**AIMが、GPS再放射装置（re-radiator）の不具合について書いている箇所**です。
@@ -287,6 +356,7 @@ RAIMを調べて、いちばん印象に残ったのは<strong>「余分な1個�
 - RAIMの可用性は**飛行フェーズで変わる**。<strong>洋上・エンルート・ターミナルはほぼ100％、落ちるとしたら進入</strong>（非精密進入のTSO要件が他のフェーズより格段に厳しいため）。
 - 警報は2種類。<strong>①衛星が足りず監視できない（位置は出ているが完全性が判定できない） ②異常を検知した</strong>。
 - 落ちたときの行動は日米で同じ構造。**RAIMが効いている間だけ他装置の監視を省略でき**、**喪失したら常時監視**、**できないか警報が出たら管制に連絡してGPSに依存しない経路へ**。進入中に完全性警報、又はFAF通過前に警報機能が使えない表示が出たら**継続してはならない**。飛行前に不可用と予測されたら**他装置に頼る／RAIMのある経路へ変更／出発を遅らせる／飛行を中止**。
+- <strong>「SBASがあれば衛星4個でもLPVができる」は成り立たない。</strong>SBASでは判定が**衛星数からVPL＜VAL**（垂直**50m**、LPV-200は**35m**）に替わり、**VPLは幾何配置で決まる**。**4個は冗長ゼロで幾何が最も苦しく**、受信機はLNAV/VNAVかLNAVへ落ちる。ACの「**4個＋気圧高度でも完全性を継続できる**」は**Appendix 1＝洋上・遠隔のFDEの話**で、SBASの垂直誘導とは別モード。実務では**FAP手前2NMでLP/LPV表示を確認する**のが手順で、衛星を数える場面はない。
 - **SBAS覆域内ではRAIM予測は基本的に不要**。ただし**覆域外に出ると受信機はFDEに戻り**、**SBASの完全性とFDEのうち保護レベルの良いほうを使う**。だから**SBAS機でもSBAS非提供空域のRAIM可用性は確認すべき**（5-017）。
 - 限界として、<strong>RAIMはスプーフィングに対しては部分的にしか効かない</strong>。**パイロットが誤表示に気づけない可能性があり、ATCが唯一の発見手段になりうる**（FAA AIM）。RAIMは**観測どうしの矛盾**を見る仕組みなので、**全体が整合的に騙される状況には弱い**。
 
