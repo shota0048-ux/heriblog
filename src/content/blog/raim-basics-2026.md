@@ -311,6 +311,8 @@ Garminのマニュアルも、はっきり書いています。
 
 <strong>LPVの可否はNOTAMで確認する。</strong>衛星数の議論とは、最初から別レイヤーです。
 
+<strong>では、限界を超えたときコックピットには実際に何が出るのか。</strong>GTNの表示文言とFAA承認の飛行規程補足を、[別記事にまとめました](/blog/gtn-integrity-annunciations-2026/)。
+
 | 認識 | 判定 |
 |---|---|
 | SBASがあればRAIMの「5個」は判定基準でなくなる | <strong>正しい</strong> |
@@ -366,6 +368,7 @@ RAIMを調べて、いちばん印象に残ったのは<strong>「余分な1個�
 - [IFRでGPSを使う基準（5-005）——RAIMが5分途切れると予測されたら、飛行を中止する](/blog/gps-ifr-circular-2026/)
 - [AC 20-138Dを読む——日本の基準が一行で参照している261ページに、ヘリ専用の章があった](/blog/ac20-138-2026/)
 - [RNAV航行の許可はどう取るのか——5-017の附属書10本と、最終進入でFTE 0.15NMという目標](/blog/rnav-approval-2026/)
+- [LOI、APPROACH DOWNGRADE、ABORT APPROACH——完全性が足りないとき、GTNは何を表示するか](/blog/gtn-integrity-annunciations-2026/)
 
 ---
 

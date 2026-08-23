@@ -139,6 +139,7 @@ export const SERIES: SeriesDef[] = [
 			'ac20-138-2026',
 			'rnav-approval-2026',
 			'raim-basics-2026',
+			'gtn-integrity-annunciations-2026',
 		],
 	},
 ];
