@@ -190,6 +190,8 @@ heroImage: '../../assets/posts/kodai-heli-course-hero.jpg'
 
 *本記事は、国土交通省の公表資料および報道に基づき、現役ヘリコプターパイロットの視点から整理したものです。視察の内容は報道によります。数字はいずれも公表時点のもので、今後の進捗により変わり得ます。「同じ年度に二つが並ぶ」ことの評価は筆者の見方であり、公的な指摘ではありません。*
 
+*ヒーロー画像は航空大学校の訓練機（ビーチクラフトG58バロン）です。"Japan Civil Aviation College Beechcraft G58 Baron (JA16DE TH-2511)" by contri / [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Japan_Civil_Aviation_College_Beechcraft_G58_Baron_(JA16DE_TH-2511)_(53263703857).jpg) / CC BY-SA 4.0（本記事への掲載にあたりリサイズを行いました）*
+
 ---
 
 **出典**
