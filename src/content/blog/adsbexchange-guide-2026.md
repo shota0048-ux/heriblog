@@ -212,6 +212,7 @@ ADS-B Exchangeが知られているのは、**表示する機体を絞り込ま�
 
 ### 関連記事
 
+- [Flightradar24で年35ドルの機能が、ADS-B Exchangeでは無料——2つの航空機追跡サービスを比較する](/blog/adsbx-vs-fr24-2026/)
 - [Flightradar24はなぜ機体を映せるのか——ADS-Bとマルチラテレーション（MLAT）の仕組みを解説](/blog/flight-tracking-mlat-2026/)
 - [ADS-Bとは何か——「放送型自動位置情報」の仕組み・メリット・課題](/blog/adsb-basics-2026/)
 - [新千歳の「デジタル安全バリア」——GPSで誤進入を止める試み。ADS-Bと繋いだら何ができるか](/blog/digital-safety-barrier-adsb-2026/)
