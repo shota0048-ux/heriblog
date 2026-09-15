@@ -1,7 +1,8 @@
 ---
 title: 'ADS-B Exchangeの使い方——空港コードで飛べば、日本の空もすぐ見える'
-description: 'Flightradar24で見えない機体も映る「ADS-B Exchange」。無料・ログイン不要で使えますが、英語なので敬遠されがちです。空港コードでのジャンプ、機体クリックで出る詳細パネルの読み方、キーボードショートカットまで、実際に操作しながら手順を整理しました。FMS選択高度・IAS・QNH・風まで見えるのが、このサイトの本当の強みです。'
+description: 'Flightradar24で見えない機体も映る「ADS-B Exchange」。無料・ログイン不要で使えますが、英語なので敬遠されがちです。空港コードでのジャンプ、機体クリックで出る詳細パネルの読み方、キーボードショートカットまで、実際に操作しながら手順を整理しました。FMS選択高度・IAS・QNH・風まで見えるのが、このサイトの本当の強みです。パネルの構成、航法三角形、高度の基準面、選択高度の読み方を図で追加しました。'
 pubDate: '2026-08-10'
+updatedDate: '2026-09-16'
 category: '基礎知識'
 tags: ['航空安全']
 heroImage: '../../assets/posts/adsbexchange-guide-hero.jpg'
@@ -64,6 +65,58 @@ heroImage: '../../assets/posts/adsbexchange-guide-hero.jpg'
 
 Flightradar24の無料版に慣れていると、情報量の差に驚くと思う。実際に1機クリックして出てきた項目を、意味とともに整理する。
 
+先に全体像を出しておく。パネルは**8つのブロック**に分かれていて、それぞれ答えている問いが違う。
+
+<div class="adsbx-panel-fig" style="max-width:560px;margin:1.6em auto;">
+<svg viewBox="0 0 560 580" xmlns="http://www.w3.org/2000/svg" width="100%" role="img" aria-label="ADS-B Exchangeの機体詳細パネルの構成図。8つのブロックが何に答えるかを示す">
+  <text x="280" y="26" text-anchor="middle" fill="#14304a" font-size="15" font-weight="bold">機体をクリックすると出る詳細パネルの構成</text>
+  <text x="280" y="46" text-anchor="middle" fill="#4b5563" font-size="12">8つのブロックは、それぞれ違う問いに答えている</text>
+  <rect x="14" y="70" width="532" height="54" rx="7" fill="#f6f4ee" stroke="#d9d3c6" stroke-width="1"/>
+  <rect x="24" y="81" width="112" height="32" rx="5" fill="#3a7ca5"/>
+  <text x="80" y="102" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">SPATIAL</text>
+  <text x="150" y="93" fill="#4b5563" font-size="11">位置・高度・昇降率・対地針路</text>
+  <text x="150" y="113" fill="#14304a" font-size="12.5" font-weight="bold">「いまどこを、どう飛んでいるか」</text>
+  <rect x="14" y="132" width="532" height="54" rx="7" fill="#ffffff" stroke="#d9d3c6" stroke-width="1"/>
+  <rect x="24" y="143" width="112" height="32" rx="5" fill="#3a7ca5"/>
+  <text x="80" y="164" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">SPEED</text>
+  <text x="150" y="155" fill="#4b5563" font-size="11">GS ／ TAS ／ IAS ／ マッハ</text>
+  <text x="150" y="175" fill="#14304a" font-size="12.5" font-weight="bold">「対地・対気・指示、どれで速いのか」</text>
+  <rect x="14" y="194" width="532" height="54" rx="7" fill="#f6f4ee" stroke="#d9d3c6" stroke-width="1"/>
+  <rect x="24" y="205" width="112" height="32" rx="5" fill="#3a7ca5"/>
+  <text x="80" y="226" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">ALTITUDE</text>
+  <text x="150" y="217" fill="#4b5563" font-size="11">気圧高度 ／ 幾何高度 ／ QNH</text>
+  <text x="150" y="237" fill="#14304a" font-size="12.5" font-weight="bold">「どの基準で測った高度なのか」</text>
+  <rect x="14" y="256" width="532" height="54" rx="7" fill="#ffffff" stroke="#d9d3c6" stroke-width="1"/>
+  <rect x="24" y="267" width="112" height="32" rx="5" fill="#3a7ca5"/>
+  <text x="80" y="288" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">DIRECTION</text>
+  <text x="150" y="279" fill="#4b5563" font-size="11">対地針路 ／ 真方位 ／ 磁方位 ／ バンク角</text>
+  <text x="150" y="299" fill="#14304a" font-size="12.5" font-weight="bold">「機首はどこを向いているか」</text>
+  <rect x="14" y="318" width="532" height="54" rx="7" fill="#f6f4ee" stroke="#d9d3c6" stroke-width="1"/>
+  <rect x="24" y="329" width="112" height="32" rx="5" fill="#3a7ca5"/>
+  <text x="80" y="350" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">WIND</text>
+  <text x="150" y="341" fill="#4b5563" font-size="11">風向・風速 ／ TAT・OAT</text>
+  <text x="150" y="361" fill="#14304a" font-size="12.5" font-weight="bold">「予報ではない、その高度の実測の風」</text>
+  <rect x="14" y="380" width="532" height="54" rx="7" fill="#fdf1ec" stroke="#b65a3b" stroke-width="1.6"/>
+  <rect x="24" y="391" width="112" height="32" rx="5" fill="#b65a3b"/>
+  <text x="80" y="412" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">FMS SEL</text>
+  <text x="150" y="403" fill="#4b5563" font-size="11">Sel. Alt. ／ Sel. Head.</text>
+  <text x="150" y="423" fill="#b65a3b" font-size="12.5" font-weight="bold">「次に何をするつもりか」</text>
+  <text x="536" y="400" text-anchor="end" fill="#b65a3b" font-size="11" font-weight="bold">★ここが本命</text>
+  <rect x="14" y="442" width="532" height="54" rx="7" fill="#f6f4ee" stroke="#d9d3c6" stroke-width="1"/>
+  <rect x="24" y="453" width="112" height="32" rx="5" fill="#3a7ca5"/>
+  <text x="80" y="474" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">SIGNAL</text>
+  <text x="150" y="465" fill="#4b5563" font-size="11">取得元 ／ RSSI ／ 受信機数 ／ 経過秒</text>
+  <text x="150" y="485" fill="#14304a" font-size="12.5" font-weight="bold">「この位置は、どれくらい新しいか」</text>
+  <rect x="14" y="504" width="532" height="54" rx="7" fill="#ffffff" stroke="#d9d3c6" stroke-width="1"/>
+  <rect x="24" y="515" width="112" height="32" rx="5" fill="#3a7ca5"/>
+  <text x="80" y="536" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">ACCURACY</text>
+  <text x="150" y="527" fill="#4b5563" font-size="11">NACp ／ SIL ／ NACv</text>
+  <text x="150" y="547" fill="#14304a" font-size="12.5" font-weight="bold">「この位置は、どれくらい信用できるか」</text>
+</svg>
+</div>
+
+以下、上から順に見ていく。
+
 ### 位置・速度の基本（SPATIAL）
 
 | 項目 | 意味 |
@@ -98,6 +151,50 @@ Flightradar24の無料版に慣れていると、情報量の差に驚くと思�
 
 **QNHが見える**のは驚いた。高度計規正の実際の値が、外から分かってしまう。
 
+そもそも、なぜ同じ機体の高度が2つ（QNHを入れれば3つ）並ぶのか。**基準にしている面が違う**からだ。
+
+<div class="adsbx-alt-fig" style="max-width:560px;margin:1.6em auto;">
+<svg viewBox="0 0 560 442" xmlns="http://www.w3.org/2000/svg" width="100%" role="img" aria-label="高度の基準面の図。1013.25hPa面、海面、WGS84楕円体面という3つの基準があるため、同じ機体の高度が違う数字になることを示す">
+  <defs>
+    <marker id="a2-navy" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 z" fill="#14304a"/></marker>
+    <marker id="a2-gold" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 z" fill="#a07000"/></marker>
+    <pattern id="grd" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="#b9b2a2" stroke-width="3"/></pattern>
+  </defs>
+  <text x="280" y="26" text-anchor="middle" fill="#14304a" font-size="15" font-weight="bold">同じ1機の高度が、3つの数字になる理由</text>
+  <text x="280" y="46" text-anchor="middle" fill="#4b5563" font-size="12">基準にする「面」が3つあるから</text>
+  <!-- aircraft -->
+  <g transform="translate(250,88)">
+    <path d="M0,10 L34,10 L46,4 L34,-2 L0,-2 Z" fill="#3a7ca5"/>
+    <path d="M14,-2 L22,-16 L28,-16 L24,-2 Z" fill="#3a7ca5"/>
+    <path d="M14,10 L20,22 L26,22 L24,10 Z" fill="#3a7ca5"/>
+  </g>
+  <!-- surfaces -->
+  <line x1="40" y1="150" x2="520" y2="150" stroke="#14304a" stroke-width="2" stroke-dasharray="8,5"/>
+  <text x="46" y="144" fill="#14304a" font-size="11.5" font-weight="bold">① 1013.25 hPa の面（標準大気）</text>
+  <line x1="40" y1="215" x2="520" y2="215" stroke="#2a9d8f" stroke-width="2.5"/>
+  <text x="46" y="209" fill="#1f7a70" font-size="11.5" font-weight="bold">② 海面 ＝ QNH の基準面（図では QNH 1020 hPa）</text>
+  <line x1="40" y1="272" x2="520" y2="272" stroke="#a07000" stroke-width="2" stroke-dasharray="8,5"/>
+  <text x="46" y="266" fill="#a07000" font-size="11.5" font-weight="bold">③ WGS84 楕円体面（GPS が高さを測る基準）</text>
+  <line x1="40" y1="312" x2="520" y2="312" stroke="#8a8271" stroke-width="2"/>
+  <rect x="40" y="312" width="480" height="14" fill="url(#grd)" opacity="0.8"/>
+  <text x="46" y="306" fill="#6b7280" font-size="11">地表</text>
+  <!-- measurement arrows -->
+  <line x1="298" y1="93" x2="412" y2="93" stroke="#9aa3ad" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="400" y1="95" x2="400" y2="146" stroke="#14304a" stroke-width="1.8" marker-end="url(#a2-navy)"/>
+  <text x="408" y="128" fill="#14304a" font-size="11" font-weight="bold">Barometric</text>
+  <line x1="330" y1="95" x2="330" y2="268" stroke="#a07000" stroke-width="1.8" marker-end="url(#a2-gold)"/>
+  <text x="338" y="240" fill="#a07000" font-size="11" font-weight="bold">Geom. WGS84</text>
+  <!-- legend -->
+  <rect x="40" y="336" width="480" height="90" rx="8" fill="#f6f4ee" stroke="#d9d3c6" stroke-width="1"/>
+  <text x="56" y="358" fill="#14304a" font-size="11.5"><tspan font-weight="bold">Barometric</tspan> ＝ ①からの高さ（気圧で測る）</text>
+  <text x="56" y="377" fill="#14304a" font-size="11.5"><tspan font-weight="bold">Geom. WGS84</tspan> ＝ ③からの高さ（GPS で測る）</text>
+  <text x="56" y="396" fill="#14304a" font-size="11.5"><tspan font-weight="bold">QNH</tspan> ＝ ②の気圧として機体が高度計にセットしている値</text>
+  <text x="504" y="417" text-anchor="end" fill="#6b7280" font-size="10">※QNH が 1013.25 より低いときは、①は②より下にくる</text>
+</svg>
+</div>
+
+気圧高度とGPS高度の差は、その空域の気圧配置を映している。**両方が並んで出る**というのは、本来なら別々に用意しないと比べられないものが、勝手に比べられる状態で置いてあるということだ。
+
 ### 針路の内訳（DIRECTION）
 
 Ground Track（対地針路）、**True Heading（真方位）**、**Magnetic Heading（磁方位）**、**Magnetic Decl.（偏差）**、Track Rate、そして **Roll（バンク角）**。
@@ -114,6 +211,58 @@ Ground Track（対地針路）、**True Heading（真方位）**、**Magnetic He
 
 **実機が測っている上空の風と気温**が見える。予報ではなく実測値だ。飛行計画の風の見積もりが妥当だったかを、あとから突き合わせられる。
 
+### この3つは、1枚の図に収まる
+
+ここまで見てきた **SPEED・DIRECTION・WIND** は、バラバラの数字に見えて、実は<strong>航法三角形そのもの</strong>だ。図にするとこうなる。
+
+<div class="adsbx-triangle-fig" style="max-width:560px;margin:1.6em auto;">
+<svg viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg" width="100%" role="img" aria-label="航法三角形の図。TASベクトルと風ベクトルの合成が対地速度ベクトルになり、機首方位と対地針路の差が偏流角になることを示す">
+  <defs>
+    <marker id="ah-navy" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#14304a"/></marker>
+    <marker id="ah-teal" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#2a9d8f"/></marker>
+    <marker id="ah-rust" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#b65a3b"/></marker>
+  </defs>
+  <text x="280" y="26" text-anchor="middle" fill="#14304a" font-size="15" font-weight="bold">SPEED・DIRECTION・WIND は、1つの三角形に収まる</text>
+  <text x="280" y="46" text-anchor="middle" fill="#4b5563" font-size="12">ADS-B Exchange は、この三角形の3辺すべてを同時に表示する</text>
+  <!-- TAS vector (heading) -->
+  <line x1="110" y1="350" x2="320" y2="120" stroke="#14304a" stroke-width="3" marker-end="url(#ah-navy)"/>
+  <!-- Wind vector -->
+  <line x1="320" y1="120" x2="400" y2="165" stroke="#2a9d8f" stroke-width="3" marker-end="url(#ah-teal)"/>
+  <!-- GS vector (track) -->
+  <line x1="110" y1="350" x2="400" y2="165" stroke="#b65a3b" stroke-width="3.5" marker-end="url(#ah-rust)"/>
+  <!-- drift angle arc -->
+  <path d="M 110 350 L 192.6 297.3 A 98 98 0 0 0 176.1 277.6 Z" fill="#6b7280" opacity="0.16"/>
+  <path d="M 192.6 297.3 A 98 98 0 0 0 176.1 277.6" fill="none" stroke="#6b7280" stroke-width="1.6"/>
+  <line x1="190" y1="295" x2="236" y2="330" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="240" y="330" fill="#6b7280" font-size="11.5" font-weight="bold">偏流角（ドリフト）</text>
+  <text x="240" y="346" fill="#6b7280" font-size="10.5">＝ True Heading と Ground Track の差</text>
+  <!-- origin -->
+  <circle cx="110" cy="350" r="5" fill="#14304a"/>
+  <text x="102" y="370" text-anchor="end" fill="#14304a" font-size="11">機体の</text>
+  <text x="102" y="384" text-anchor="end" fill="#14304a" font-size="11">現在位置</text>
+  <!-- TAS labels -->
+  <text x="225" y="182" text-anchor="end" fill="#14304a" font-size="12.5" font-weight="bold">True（TAS）</text>
+  <text x="225" y="199" text-anchor="end" fill="#14304a" font-size="10.5">機首が向いている方向の速度</text>
+  <text x="300" y="96" text-anchor="end" fill="#14304a" font-size="11" font-weight="bold">True Heading（真方位）</text>
+  <!-- wind labels -->
+  <text x="410" y="112" fill="#1f7a70" font-size="12.5" font-weight="bold">Wind（風）</text>
+  <text x="410" y="128" fill="#1f7a70" font-size="10.5">Speed / Direction (from)</text>
+  <!-- GS labels -->
+  <text x="300" y="296" fill="#b65a3b" font-size="12.5" font-weight="bold">Ground（GS）</text>
+  <text x="300" y="313" fill="#b65a3b" font-size="10.5">実際に地面の上を動く速度</text>
+  <text x="412" y="192" fill="#b65a3b" font-size="11" font-weight="bold">Ground Track（対地針路）</text>
+  <!-- caption -->
+  <rect x="30" y="392" width="500" height="62" rx="8" fill="#f6f4ee" stroke="#d9d3c6" stroke-width="1"/>
+  <text x="280" y="414" text-anchor="middle" fill="#14304a" font-size="12">紺の辺と朱の辺の<tspan font-weight="bold">長さの差</tspan>が、風の前後成分。</text>
+  <text x="280" y="433" text-anchor="middle" fill="#14304a" font-size="12">紺の辺と朱の辺の<tspan font-weight="bold">向きの差</tspan>が、偏流角。</text>
+  <text x="280" y="449" text-anchor="middle" fill="#6b7280" font-size="10.5">航法計算盤で自分で出す値が、実機の数字として並んで表示される</text>
+</svg>
+</div>
+
+紺の辺が「機首が向いている方向へ、TASで進もうとする分」。緑の辺が「風に流される分」。その合成が朱の辺、つまり**実際の動き**だ。
+
+[航法計算盤](/blog/tanc3-flight-computer-2026/)で紙の上に描いてきた三角形が、**実機の値で全部埋まった状態**で出てくる。答え合わせができる、ということでもある。
+
 ### 自動操縦の設定（FMS SEL）
 
 | 項目 | 意味 |
@@ -124,6 +273,48 @@ Ground Track（対地針路）、**True Heading（真方位）**、**Magnetic He
 ここがいちばん驚いた項目だ。**その機体がオートパイロットに何ftをセットしているかが分かる。**
 
 つまり、いま21,200ftを降下中の機体が `Sel. Alt. 6016 ft` を表示していれば、**まだ6,000ft付近まで降りる予定だ**と読める。**次に何をするつもりか**が見える、ということだ。
+
+図にすると、読み方がはっきりする。
+
+<div class="adsbx-selalt-fig" style="max-width:560px;margin:1.6em auto;">
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg" width="100%" role="img" aria-label="選択高度の読み方の図。現在の気圧高度と昇降率が「いま何をしているか」を示し、Sel. Alt.が「これから何をするか」を示すことを表す">
+  <defs>
+    <marker id="a3-rust" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 z" fill="#b65a3b"/></marker>
+    <marker id="a3-blue" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 z" fill="#3a7ca5"/></marker>
+    <marker id="a3-gray" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 z" fill="#6b7280"/></marker>
+  </defs>
+  <text x="280" y="26" text-anchor="middle" fill="#14304a" font-size="15" font-weight="bold">Sel. Alt. が読めると、「この先」が分かる</text>
+  <text x="280" y="46" text-anchor="middle" fill="#4b5563" font-size="12">現在の高度と昇降率は「いま」。選択高度は「これから」。</text>
+  <!-- axes -->
+  <line x1="70" y1="70" x2="70" y2="288" stroke="#b9b2a2" stroke-width="1.5"/>
+  <line x1="70" y1="288" x2="524" y2="288" stroke="#b9b2a2" stroke-width="1.5"/>
+  <text x="62" y="78" text-anchor="end" fill="#6b7280" font-size="10.5">高度</text>
+  <text x="520" y="304" text-anchor="end" fill="#6b7280" font-size="10.5">時間 →</text>
+  <!-- Sel. Alt. line -->
+  <line x1="70" y1="238" x2="524" y2="238" stroke="#3a7ca5" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="78" y="231" fill="#3a7ca5" font-size="12" font-weight="bold">Sel. Alt. 6,016 ft</text>
+  <!-- flown path -->
+  <path d="M 92 92 Q 145 100 196 132" fill="none" stroke="#b65a3b" stroke-width="3"/>
+  <!-- planned path -->
+  <path d="M 196 132 Q 320 196 424 238" fill="none" stroke="#b65a3b" stroke-width="2.4" stroke-dasharray="6,5" opacity="0.75"/>
+  <line x1="424" y1="238" x2="512" y2="238" stroke="#b65a3b" stroke-width="2.4" stroke-dasharray="6,5" opacity="0.75" marker-end="url(#a3-rust)"/>
+  <!-- current point -->
+  <circle cx="196" cy="132" r="6.5" fill="#b65a3b" stroke="#ffffff" stroke-width="2"/>
+  <text x="212" y="106" fill="#b65a3b" font-size="12.5" font-weight="bold">Baro. altitude 21,200 ft ▼</text>
+  <text x="212" y="124" fill="#b65a3b" font-size="11.5">Vert. Rate −1,800 ft/min</text>
+  <text x="188" y="152" text-anchor="end" fill="#6b7280" font-size="10.5">いま</text>
+  <!-- gap brace -->
+  <line x1="330" y1="146" x2="330" y2="232" stroke="#6b7280" stroke-width="1.4" marker-start="url(#a3-gray)" marker-end="url(#a3-gray)"/>
+  <text x="340" y="180" fill="#14304a" font-size="11.5" font-weight="bold">あと約 15,000 ft</text>
+  <text x="340" y="196" fill="#14304a" font-size="11.5">降りる予定と読める</text>
+  <!-- annotation for level off -->
+  <text x="430" y="262" fill="#6b7280" font-size="10.5">ここで水平飛行に移る見込み</text>
+  <!-- caption -->
+  <rect x="40" y="316" width="480" height="44" rx="8" fill="#fdf1ec" stroke="#b65a3b" stroke-width="1.2"/>
+  <text x="280" y="337" text-anchor="middle" fill="#8a3f26" font-size="12"><tspan font-weight="bold">Vert. Rate</tspan> が「いま何をしているか」、<tspan font-weight="bold">Sel. Alt.</tspan> が「次に何をするつもりか」。</text>
+  <text x="280" y="354" text-anchor="middle" fill="#8a3f26" font-size="11.5">この2つが並ぶことに、このサイトの価値がある。</text>
+</svg>
+</div>
 
 ### 電波の受信状況（SIGNAL）
 
