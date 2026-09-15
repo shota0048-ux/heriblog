@@ -2,6 +2,7 @@
 title: '山岳遭難が過去最多——「救助はタダ」でいいのか。有料化を前向きに考える'
 description: '全国の山岳遭難者が過去最多の3,623人に。疲労や道迷い、準備不足による“安易な救助要請”も目立ち、救助を「無料のタクシー」のように使う人もいます。救助は本当はタダではない——救助費用の有料化を、現役ヘリパイロット視点で前向きに、かつ慎重に考えます。'
 pubDate: '2026-06-20'
+updatedDate: '2026-09-15'
 category: 'ニュース'
 heroImage: '../../assets/posts/mountain-rescue-paid-hero.jpg'
 ---
@@ -96,6 +97,7 @@ TBS NEWS DIG（2026年6月19日配信）が、考えさせられる救助事案�
 
 ### 関連記事
 
+- [「救助の対価」とは書けない——富士山のヘリ救助有料化は、どういう名目でお金を取るのか](/blog/fuji-heli-rescue-fee-2026/)
 - [災害時の救援航空機——「電話で許可申請」「包括的許可」が認められる仕組み](/blog/disaster-relief-aviation-procedures-2026/)
 - [そのヘリは、誰が操縦しているのか──消防防災ヘリ「運航形態」の知られざる話](/blog/fire-disaster-heli-operation-2026/)
 - [「崖端効果（Cliff Edge Effect）」とは——垂直構造物の縁で風が牙をむく。日本の山岳ヘリポートではどうか](/blog/cliff-edge-effect-2026/)
