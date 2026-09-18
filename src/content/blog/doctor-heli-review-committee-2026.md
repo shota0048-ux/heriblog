@@ -2,7 +2,7 @@
 title: '国がついに動いた——厚労省「ドクターヘリ検討会」7月設置。整備士不足の先に議論すべきこと'
 description: '整備士不足による運航休止が相次いだドクターヘリについて、厚生労働省が2026年7月中に検討会を設置する。論点は「財政支援を含む国の関与」と「操縦士・整備士の安定確保」。これまで現場任せだった問題を国が引き取った意味と、検討会で本当に詰めるべき点を、現役ヘリパイロットの視点で整理する。'
 pubDate: '2026-07-02'
-updatedDate: '2026-07-10'
+updatedDate: '2026-09-18'
 category: '航空業界'
 heroImage: '../../assets/posts/doctor-heli-review-committee-hero.jpg'
 ---
@@ -74,6 +74,7 @@ heroImage: '../../assets/posts/doctor-heli-review-committee-hero.jpg'
 
 ### 関連記事
 
+- [ドクターヘリ検討会、中間とりまとめ——「2パイロット運用」は当面の臨時対応と位置づけられた](/blog/doctor-heli-interim-report-2026/)
 - [ドクターヘリが「整備士不足」で飛べない——要件は厳しすぎないか、を考える](/blog/doctor-heli-suspension-mechanic-2026/)
 - [ドクターヘリに整備士は必ず乗る？ 法的根拠と2026年の特例措置を整理する](/blog/doctor-heli-mechanic-onboard-2026/)
 - [国が出したヘリ操縦士不足対策——主眼は「ライセンス」ではなく「飛行時間（経験）」だった](/blog/heli-pilot-experience-accumulation-2026/)

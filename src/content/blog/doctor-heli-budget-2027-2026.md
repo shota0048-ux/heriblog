@@ -2,6 +2,7 @@
 title: 'ドクターヘリ支援、令和9年度予算で増額へ——「約100億円の枠」と、延べ345日の運休が動かした財布'
 description: '政府が、整備士不足で運休が続くドクターヘリの財政支援を令和9年度予算で増額する方向で調整。既存の「ドクターヘリ導入促進事業」約100億円の枠などを積み増す。昨年7月〜今年2月で延べ345日の計画運休、燃料・機材・人件費の高騰——お金がようやく具体的に動き始めた背景を、現役ヘリパイロットの視点で読み解く。'
 pubDate: '2026-07-14'
+updatedDate: '2026-09-18'
 category: '航空業界'
 heroImage: '../../assets/posts/doctor-heli-budget-2027-hero.jpg'
 ---
@@ -57,6 +58,7 @@ heroImage: '../../assets/posts/doctor-heli-budget-2027-hero.jpg'
 
 ### 関連記事
 
+- [ドクターヘリ検討会、中間とりまとめ——「2パイロット運用」は当面の臨時対応と位置づけられた](/blog/doctor-heli-interim-report-2026/)
 - [「飛行1時間30万円」を誰が払うか——防災・ドクターヘリ操縦士の養成費を国が支援へ](/blog/heli-pilot-training-cost-support-2026/)
 - [国がついに動いた——厚労省「ドクターヘリ検討会」7月設置。整備士不足の先に議論すべきこと](/blog/doctor-heli-review-committee-2026/)
 - [兵庫が全国初「2パイロット制」導入へ——ドクターヘリ整備士不足の“現実解”と、その割り切り](/blog/doctor-heli-two-pilot-hyogo-2026/)

@@ -2,6 +2,7 @@
 title: '兵庫が全国初「2パイロット制」導入へ——ドクターヘリ整備士不足の“現実解”と、その割り切り'
 description: '整備士不足で運休が常態化していた兵庫県のドクターヘリが、整備士の代わりに専門研修を受けた操縦士をもう1人乗せる「2パイロット制」を全国で初めて導入する。厚労省が2026年3月に認めた臨時措置の初適用だ。防災ヘリで蓄積された知見はどこまで効いたのか、そして何が“戻らない”のか。現役ヘリパイロットの視点で読み解く。'
 pubDate: '2026-07-10'
+updatedDate: '2026-09-18'
 category: '航空業界'
 heroImage: '../../assets/posts/doctor-heli-two-pilot-hero.jpg'
 ---
@@ -76,6 +77,7 @@ heroImage: '../../assets/posts/doctor-heli-two-pilot-hero.jpg'
 
 ### 関連記事
 
+- [ドクターヘリ検討会、中間とりまとめ——「2パイロット運用」は当面の臨時対応と位置づけられた](/blog/doctor-heli-interim-report-2026/)
 - [国がついに動いた——厚労省「ドクターヘリ検討会」7月設置。整備士不足の先に議論すべきこと](/blog/doctor-heli-review-committee-2026/)
 - [ドクターヘリの整備士同乗を掘り下げる ― 機内での役割、海外との違い、パイロット代替は可能か](/blog/doctor-heli-mechanic-onboard-deepdive-2026/)
 - [ドクターヘリが「整備士不足」で飛べない——要件は厳しすぎないか、を考える](/blog/doctor-heli-suspension-mechanic-2026/)
