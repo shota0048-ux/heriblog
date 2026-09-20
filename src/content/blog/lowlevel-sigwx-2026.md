@@ -3,6 +3,7 @@ title: '下層悪天予想図とは——SFC〜FL150を網羅する小型機・�
 description: '気象庁の「下層悪天予想図」（Low-level Significant Weather Chart）は、地表からFL150までの航空運航リスクを1枚に集約した予報資料です。雷雨・着氷・乱気流・視程不良・前線・0℃線まで——使われているデータ、見方、活用法を整理しました。'
 pubDate: '2026-05-22'
 category: '資格・訓練'
+tags: ['気象']
 heroImage: '../../assets/posts/lowlevel-sigwx-hero.jpg'
 ---
 

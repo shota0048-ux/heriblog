@@ -3,6 +3,7 @@ title: '着氷（アイシング）の基礎——学生のうちに押さえて
 description: 'パイロットを目指す学生に向けて、着氷（アイシング）の物理的な仕組み、種類（clear ice／rime／glaze／hoar frost）、機体への影響、そして気象判断・対処方法を整理しました。「細い物体ほど着氷しやすい」という捕捉率の話、過去の事故事例まで一気にまとめています。'
 pubDate: '2026-04-30'
 category: '資格・訓練'
+tags: ['気象']
 heroImage: '../../assets/posts/icing-basics-2026-hero.jpg'
 ---
 

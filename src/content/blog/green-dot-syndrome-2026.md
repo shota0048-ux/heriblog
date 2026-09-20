@@ -3,6 +3,7 @@ title: '「グリーン・ドット症候群」——緑の点だけ見て飛ん
 description: 'FAA Safety Team とUSHST（米国ヘリコプター安全チーム）が警告する「グリーン・ドット症候群（Green Dot Syndrome）」。出発地と目的地が緑（VFR）だからといって安心して飛行を始めると、見落とされがちな低層雲・視程悪化が待ち構えていることがあります。METARの色分けの本当の意味と、その落とし穴を整理しました。'
 pubDate: '2026-05-08'
 category: '資格・訓練'
+tags: ['気象']
 heroImage: '../../assets/posts/green-dot-hero.jpg'
 ---
 

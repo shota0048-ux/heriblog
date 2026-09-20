@@ -3,6 +3,7 @@ title: '「もう少しだけ」が命取り——霧の中のヘリコプター
 description: '霧や雲中飛行で起こる空間識失調（バーティゴ）と「Get-home-itis（早く帰りたい病）」。2018年8月の群馬県防災ヘリ墜落事故を振り返りながら、ヘリパイロットが霧と向き合うための4つの教訓を整理します。'
 pubDate: '2026-04-15'
 category: '飛行記録'
+tags: ['気象']
 heroImage: '../../assets/posts/hikou-kiroku-01-hero.jpg'
 ---
 

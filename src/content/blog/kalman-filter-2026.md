@@ -3,6 +3,7 @@ title: 'カルマンフィルタとは？——予報ガイダンスとGPSに共
 description: '気象庁の予報ガイダンスにも、航空機のGPS/INS統合にも使われているカルマンフィルタ。難しい数式を使わず、「予測」と「実測」を不確かさに応じて賢く混ぜ合わせるという考え方を、ヘリパイロット視点でやさしく解説する。'
 pubDate: '2026-05-30'
 category: '資格・訓練'
+tags: ['気象']
 heroImage: '../../assets/posts/kalman-filter-hero.jpg'
 ---
 

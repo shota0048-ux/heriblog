@@ -4,7 +4,7 @@ description: '離陸の最低気象条件（Take-off Minima）は「離陸でき
 pubDate: '2026-07-04'
 updatedDate: '2026-08-23'
 category: '基礎知識'
-tags: ['IFR']
+tags: ['IFR', '気象']
 heroImage: '../../assets/posts/takeoff-minima-provisional-hero.jpg'
 ---
 

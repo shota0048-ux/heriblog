@@ -3,6 +3,7 @@ title: 'R66が乱気流で空中分解——ATSB最終報告書の教訓（豪�
 description: '2023年10月、豪州ニューサウスウェールズ州 Hawks Nest 付近でRobinson R66が乱気流に遭遇、低G状態から急激な右ロールに入って空中分解、機長が死亡しました。ATSB（豪州運輸安全局）の最終報告書が指摘する「乱気流＋速度超過＋片手操縦＋非対称水平安定板」の連鎖を整理します。'
 pubDate: '2026-05-10'
 category: '航空事故解説'
+tags: ['気象']
 heroImage: '../../assets/posts/r66-hero.jpg'
 ---
 

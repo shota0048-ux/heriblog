@@ -3,6 +3,7 @@ title: 'ヘリが自ら雷を呼ぶ——「ヘリコプター誘発雷」でS-7
 description: '2023年、カナダでHelijetのシコルスキーS-76が巡航中に被雷し、テイルロータ翼が分離、約3,000ft超の急降下に陥った。原因は「ヘリコプター誘発雷」。回転するロータが帯電し、自ら雷を引き起こす現象だ。TSB（カナダ運輸安全委員会）報告書A23P0136をもとに、事象の経過と教訓をヘリパイロット視点で整理する。'
 pubDate: '2026-05-31'
 category: '航空事故解説'
+tags: ['気象']
 heroImage: '../../assets/posts/helicopter-induced-lightning-s76-hero.jpg'
 ---
 

@@ -3,6 +3,7 @@ title: 'SCW（SUPERC WEATHER）の使い方——プロが使う天気予報ビ�
 description: 'SCW（SUPERC WEATHER）は、気象庁のスーパーコンピュータが計算した数値予報データを、誰でも無料で可視化できるサイトです。GPV気象予報の後継として2017年にリリースされた本サービスの使い方、3つのモデル（LFM/MSM/GSM）の違い、パイロット視点での活用法をまとめました。'
 pubDate: '2026-05-20'
 category: '資格・訓練'
+tags: ['気象']
 heroImage: '../../assets/posts/scw-hero.jpg'
 ---
 
