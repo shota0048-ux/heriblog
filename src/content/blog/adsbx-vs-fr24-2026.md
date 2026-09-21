@@ -2,6 +2,7 @@
 title: 'Flightradar24で年35ドルの機能が、ADS-B Exchangeでは無料——2つの航空機追跡サービスを比較する'
 description: '同じADS-Bを見ているのに、性格がまるで違う2つのサービス。受信機は5万台対2.5万台、Flightradar24は衛星ADS-Bやレーダーまで取り込む一方で、機体を非表示にする仕組みを持っています。IAS・TAS・風・外気温といったExtended Mode SはFR24ではGold（年34.99ドル）以上の機能ですが、ADS-B Exchangeでは無料。しかもQNHやFMSの選択高度、バンク角まで出ます。データソース、フィルタリング方針、料金、履歴、APIを並べて整理しました。'
 pubDate: '2026-09-14'
+updatedDate: '2026-09-22'
 category: '基礎知識'
 tags: ['航空安全']
 heroImage: '../../assets/posts/adsbx-vs-fr24-hero.jpg'
@@ -243,6 +244,17 @@ Flightradar24の特典は、金額だけ見ればかなり大きい。**年499.9
 - APIは、個人なら<strong>ADS-B Exchangeの$10/月・10,000リクエスト</strong>。FR24のAPIは**どのプランにも含まれず別売**。
 - 受信機を立てると、FR24は<strong>Businessプランが無料</strong>、ADS-B Exchangeは**広告非表示が無料**。受信機は**同時に複数サービスへ送れる**。
 - 日本で使うなら、**日本語UIと便名照合はFR24一択**。**ADS-B Out非装備機はどちらにも映らない**ので、山間部・低高度では両方消えることに注意。
+
+## 【2026年9月22日 追記】3つめの選択肢——FlightAware
+
+この2つとは別に、**FlightAware**があります。同じADS-Bを使っていますが、性格はさらに違いました。
+
+- <strong>27言語に日本語がある</strong>（ADS-B Exchangeは英語のみ）
+- **ゲート出発・離陸・着陸・ゲート到着の4つの時刻**まで出る。これは2社ともやっていない
+- ただし<strong>機体登録番号はEnterprise（月99.95ドル）扱い</strong>で、無料では出ない
+- **日本は「二次サービスエリア」**。定期便は出るが、日本のヘリコプターはブロックされているものが多い
+
+→ [FlightAwareの使い方——ADS-B Exchangeが「機体」を見る道具なら、こちらは「便」を見る道具](/blog/flightaware-guide-2026/)
 
 ---
 

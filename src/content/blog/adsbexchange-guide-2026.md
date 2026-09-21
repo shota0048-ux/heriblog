@@ -2,7 +2,7 @@
 title: 'ADS-B Exchangeの使い方——空港コードで飛べば、日本の空もすぐ見える'
 description: 'Flightradar24で見えない機体も映る「ADS-B Exchange」。無料・ログイン不要で使えますが、英語なので敬遠されがちです。空港コードでのジャンプ、機体クリックで出る詳細パネルの読み方、キーボードショートカットまで、実際に操作しながら手順を整理しました。FMS選択高度・IAS・QNH・風まで見えるのが、このサイトの本当の強みです。パネルの構成、航法三角形、高度の基準面、選択高度の読み方を図で追加しました。'
 pubDate: '2026-08-10'
-updatedDate: '2026-09-16'
+updatedDate: '2026-09-22'
 category: '基礎知識'
 tags: ['航空安全']
 heroImage: '../../assets/posts/adsbexchange-guide-hero.jpg'
@@ -403,6 +403,7 @@ ADS-B Exchangeが知られているのは、**表示する機体を絞り込ま�
 
 ### 関連記事
 
+- [FlightAwareの使い方——ADS-B Exchangeが「機体」を見る道具なら、こちらは「便」を見る道具](/blog/flightaware-guide-2026/)
 - [Flightradar24で年35ドルの機能が、ADS-B Exchangeでは無料——2つの航空機追跡サービスを比較する](/blog/adsbx-vs-fr24-2026/)
 - [Flightradar24はなぜ機体を映せるのか——ADS-Bとマルチラテレーション（MLAT）の仕組みを解説](/blog/flight-tracking-mlat-2026/)
 - [ADS-Bとは何か——「放送型自動位置情報」の仕組み・メリット・課題](/blog/adsb-basics-2026/)
