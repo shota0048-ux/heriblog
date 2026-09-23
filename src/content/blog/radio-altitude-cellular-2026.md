@@ -2,6 +2,7 @@
 title: '電波は「上空で使う」と話が変わる——携帯電話の上空利用を整理する'
 description: 'スマホの電波は地上で使う前提で作られている。だから旅客機では機内モードが要り、ドローンやヘリで携帯を上空で使うには専用の制度がある。なぜ上空だと話が変わるのか、航空法の機内ルールから、総務省が整えてきた携帯の「上空利用」制度（150m未満→150m以上→ローカル5G）まで、現役ヘリパイロットの視点で整理する。'
 pubDate: '2026-06-29'
+updatedDate: '2026-09-23'
 category: '基礎知識'
 heroImage: '../../assets/posts/radio-altitude-cellular-hero.jpg'
 ---
@@ -89,6 +90,7 @@ heroImage: '../../assets/posts/radio-altitude-cellular-hero.jpg'
 
 ### 関連記事
 
+- [アメリカは「ホバー自動操縦を止める」と書いた——電波高度計と5G、決着の中身](/blog/radio-altimeter-5g-rule-2026/)
 - [上空150m以上での携帯電話利用が解禁——総務省の規制改正とヘリコプターへの意味](/blog/lte-altitude-reform-2022/)
 - [航空緊急通信の完全ガイド——MAYDAYとPAN-PAN、MAYDAY FUELの違いを整理する（日本版）](/blog/emergency-radio-communication-2026/)
 
