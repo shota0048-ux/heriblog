@@ -2,6 +2,7 @@
 title: 'SCW（SUPERC WEATHER）の使い方——プロが使う天気予報ビジュアライザを徹底解説'
 description: 'SCW（SUPERC WEATHER）は、気象庁のスーパーコンピュータが計算した数値予報データを、誰でも無料で可視化できるサイトです。GPV気象予報の後継として2017年にリリースされた本サービスの使い方、3つのモデル（LFM/MSM/GSM）の違い、パイロット視点での活用法をまとめました。'
 pubDate: '2026-05-20'
+updatedDate: '2026-09-26'
 category: '資格・訓練'
 tags: ['気象']
 heroImage: '../../assets/posts/scw-hero.jpg'
@@ -46,6 +47,8 @@ Windyに似た位置づけですが、SCWは **日本の気象庁モデル（LFM
 
 SCWで切り替えられるモデルは大きく3つ。**この使い分けがすべての基本**です。
 
+> <strong>【2026年9月26日 追記】</strong>以下の数値はSCWの画面表示に沿ったものですが、<strong>気象庁側のモデル仕様はその後更新されています。</strong>現行では<strong>LFMは1km</strong>、<strong>MSMは00/12UTC初期値のみ78時間先</strong>まで、<strong>GSM本体は約13km</strong>（20kmは配信データの格子であってモデルの解像度ではありません）。詳しくは[MSMとGSM——モデルの出力は、そのままでは予報になっていない](/blog/msm-gsm-guidance-2026/)にまとめました。
+
 ### 広域モデル（GSM：Global Spectral Model）
 
 | 項目 | 内容 |
@@ -88,6 +91,8 @@ SCWで切り替えられるモデルは大きく3つ。**この使い分けが�
 | 当日の運航判断 | **局地（LFM）** |
 
 → 関連記事：[Windyの「Forecast Model」を使い分けよう](/blog/windy-forecast-models-2026/)
+
+→ 関連記事：[MSMとGSM——モデルの出力は、そのままでは予報になっていない](/blog/msm-gsm-guidance-2026/)
 
 ---
 
