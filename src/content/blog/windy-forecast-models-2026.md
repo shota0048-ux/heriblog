@@ -2,6 +2,7 @@
 title: 'Windyの「Forecast Model」を使い分けよう——ECMWF・GFS・ICON・HRRRの違いと選び方'
 description: 'Windy.comで風や雲の予報を見るとき、画面上のモデル名（ECMWF／GFS／ICON／HRRRなど）を切り替えていますか？それぞれ違う気象機関が違うアルゴリズムで計算した予報で、得意な領域も精度も違います。パイロット視点で、各モデルの特徴と使い分け方を整理しました。'
 pubDate: '2026-05-15'
+updatedDate: '2026-09-26'
 category: '資格・訓練'
 tags: ['気象']
 heroImage: '../../assets/posts/windy-hero.jpg'
@@ -264,6 +265,8 @@ ECMWFとGFSの違いは、単なるブランドの違いではありません。
 
 ### 関連記事
 
+
+- [台風の進路を、15のモデルで一度に見る——GPV Weather「各国モデルの台風進路予想」](/blog/typhoon-model-tracks-2026/)
 - [着氷（アイシング）の基礎——学生のうちに押さえておきたい仕組みと対処](/blog/icing-basics-2026/)
 - [「春の小さな嵐」を知っておく——上空寒気と寒冷渦が引き起こす雷・強風・突風](/blog/spring-cold-vortex-2026/)
 - [「グリーン・ドット症候群」——緑の点だけ見て飛んではいけない理由](/blog/green-dot-syndrome-2026/)

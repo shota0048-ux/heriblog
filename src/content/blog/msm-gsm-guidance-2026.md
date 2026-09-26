@@ -2,6 +2,7 @@
 title: 'MSMとGSM——モデルの出力は、そのままでは予報になっていない'
 description: 'SCWやWindyで見ている「MSM」「GSM」とは何なのか。気象庁の現行仕様（GSM約13km・264時間、MSM 5km・78時間、LFMは1kmになりました）を整理したうえで、その先にある「ガイダンス」という一段を解説します。同じ5km格子の中で最大20.0mmと平均2.8mmが7倍違う話、発雷確率が実は60km四方の確率である話、降雪量が地上気温2℃以上で0cmになる話まで。気象庁の講習会資料と令和6年度の解説資料集で確認しました。'
 pubDate: '2026-09-26'
+updatedDate: '2026-09-26'
 category: '基礎知識'
 tags: ['気象', '航空安全']
 heroImage: '../../assets/posts/msm-gsm-guidance-hero.jpg'
@@ -398,6 +399,7 @@ GSMの視程ガイダンスは20km格子で、<strong>赤道〜65°N・東経100
 
 ### 関連記事
 
+- [台風の進路を、15のモデルで一度に見る——GPV Weather「各国モデルの台風進路予想」](/blog/typhoon-model-tracks-2026/)
 - [飛行場時系列予報はどう作られる？——数値予報・ガイダンス・予報官の関係を解説](/blog/awfo-taf-timeseries-2026/)
 - [カルマンフィルタとは？——予報ガイダンスとGPSに共通する「予測と実測を混ぜる」技術](/blog/kalman-filter-2026/)
 - [SCW（SUPERC WEATHER）の使い方](/blog/scw-weather-2026/)
