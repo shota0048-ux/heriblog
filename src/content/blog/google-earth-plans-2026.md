@@ -170,6 +170,23 @@ Googleは「パソコン版で人気の機能はウェブ版にも入ってい�
 
 下見の道具としては非常に便利ですが、<strong>障害物の高さや位置は航空図・AIP・NOTAMなどの公式な情報で確認する</strong>、という順番は変えないほうがよいと思います。
 
+### 送電線は、地理院地図と見比べる
+
+そこでおすすめしたいのが、国土地理院の<strong>[地理院地図](https://maps.gsi.go.jp/)</strong>と相互に見ることです。
+
+地理院地図の標準地図には、<strong>送電線が地図記号で描かれています。</strong>細い灰色の線に、一定間隔で短い印が付いた線です。衛星画像では背景に溶けて見えない送電線も、地図記号なら一目で分かります。
+
+使い分けはこうです。
+
+| | 地理院地図 | Google Earth |
+|---|---|---|
+| 得意なこと | <strong>送電線の位置</strong>、地形図としての読みやすさ、等高線、標高 | 実際の見た目（画像・3D）、過去の画像、ストリートビュー |
+| 苦手なこと | 周囲の実際の様子（樹木の茂り方、建物の外観など） | <strong>細い線（送電線・電線・支線）がほぼ見えない</strong> |
+
+<strong>地理院地図で送電線がどこを通っているかを押さえてから、Google Earthでその周りの地形と景色を見る。</strong>同じ場所を2つの地図で行き来すると、片方だけでは気づかない障害物が見えてきます。地理院地図にも断面図や3D表示があるので、地形の確認はどちらでもできます。
+
+ただし、地理院地図に描かれているのは<strong>送電線</strong>です。道路沿いの電柱の配電線や、私設の架空線までは載っていません。送電線の高さも地図からは分かりません。地図の更新時期によっては、新しい送電線がまだ載っていないこともあり得ます。<strong>2つの地図を合わせても、すべての線が分かるわけではない</strong>、という前提で使ってください。
+
 ## まとめ
 
 - Google Earthのプランは、<strong>Standard（無料）</strong>、<strong>Professional（月75ドル）</strong>、<strong>Professional Advanced（月150ドル）</strong>の3つ。1ユーザーあたりの月額で、米ドル建て。<strong>2025年10月1日</strong>に有料プランの正式提供が始まった。
@@ -180,6 +197,7 @@ Googleは「パソコン版で人気の機能はウェブ版にも入ってい�
 - パソコン用の<strong>Google Earth Pro</strong>は有料プランとは別物で<strong>無料</strong>。ただし<strong>2027年6月25日で新規ダウンロードが終了</strong>する。インストール済みなら使い続けられる。
 - ウェブ版には、2026年に<strong>標高プロファイル、シェープファイルの取り込み、フライトシミュレーター</strong>などが追加された。一方で、<strong>オフラインで使えない</strong>ことなど、パソコン版との差を指摘する声も多い。
 - 運航の下見には無料版で十分役立つが、<strong>航空用のデータではない</strong>。障害物は公式な情報で確認する。
+- Google Earthでは送電線がほぼ見えないので、<strong>送電線が地図記号で描かれている地理院地図と相互に見る</strong>のがおすすめ。ただし配電線や私設の架空線は地理院地図にも載っていない。
 
 ---
 
@@ -196,6 +214,7 @@ Googleは「パソコン版で人気の機能はウェブ版にも入ってい�
 - Google for Developers「[Apply for Google Earth noncommercial credits](https://developers.google.com/maps/documentation/earth/noncommercial-credits-apply)」
 - Google Earth「[Earth のバージョン](https://www.google.com/earth/about/versions/)」
 - Google Earth Community「[Update on Google Earth Pro desktop app downloads](https://support.google.com/earth/thread/448773864?hl=en)」（2026年7月8日・13日）
+- 国土地理院「[地理院地図](https://maps.gsi.go.jp/)」、「[最適化ベクトルタイル 標準地図スタイル](https://gsi-cyberjapan.github.io/optimal_bvmap/style/std.json)」——送電線レイヤ（PwrTrnsmL）の描画定義
 - HotHardware「[Google Earth Pro Drops From $399 Per Year To Free](https://amp.hothardware.com/news/google-earth-pro-drops-from-399-per-year-to-free)」（2015年）
 
 *本記事は2026年10月14日時点の公式情報に基づきます。プランの内容、料金、提供地域は変更されることがあります。契約前に公式ページで最新の情報を確認してください。*
