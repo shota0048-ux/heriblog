@@ -303,6 +303,7 @@ FAQから、実務上の注意点です。
 
 ### 関連記事
 
+- [技能発揮訓練の「標準教材」を読む——航空局がシングルパイロットに求めているCRMとTEM](/blog/crm-standard-material-2026/)
 - [「技能発揮訓練（CRM訓練）」が全パイロットに【2028年義務化】——羽田事故から始まる再発防止策](/blog/skill-demonstration-training-2026/)
 - [操縦技能証明保有者に新設「技能発揮訓練」（2025年12月）](/blog/skill-demonstration-training-reform-2025/)
 - [CRMとAMRM](/blog/crm-amrm-2026/)
